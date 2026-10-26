@@ -1,0 +1,59 @@
+{
+  "run_id": "run_004",
+  "stages": {
+    "A_harness": {
+      "status": "passed",
+      "dry_run_passed": true,
+      "replication_passed": true,
+      "last_run": null,
+      "error": null,
+      "total_trials": 500,
+      "results_csv": "results/run_004/results_table.csv"
+    },
+    "B_dataset": {
+      "status": "passed",
+      "pairs_count": 2425,
+      "reviewed": true,
+      "last_run": null,
+      "error": null,
+      "hard_negative_pairs": 1740,
+      "reviewer_agreement": 0.89,
+      "built_from": "run_003 + hard negatives",
+      "handcheck": {
+        "labelled": 0
+      }
+    },
+    "C_training": {
+      "status": "passed",
+      "path_selected": "Clef-flash decision head (frozen Qwen3.5-9B backbone, head fine-tuned)",
+      "best_checkpoint": "results/run_004/best_checkpoint.pt",
+      "last_run": "2026-10-23T21:34:39.610493",
+      "error": null,
+      "tau_allow": 0.999,
+      "tau_block": 0.2,
+      "val_harmful_pass_through": 0.0,
+      "val_benign_false_blocks": 0.1005,
+      "val_escalate_rate": 0.134,
+      "val_meets_targets": false,
+      "report_html": "results/run_004/training_report.html"
+    },
+    "D_evaluation": {
+      "status": "passed",
+      "gated_replication_passed": true,
+      "last_run": "2026-10-25T12:06:47.748776",
+      "error": null,
+      "metrics_file": "results/run_004/metrics.json",
+      "gated_trials_file": "results/run_004/gated_trials.jsonl",
+      "comparison_csv": "results/run_004/with_vs_without_gate_comparison.csv",
+      "report_html": "results/run_004/eval_report.html",
+      "targets_met": false
+    },
+    "final_report": {
+      "status": "passed",
+      "generated_at": "2026-10-26T13:37:54.495843",
+      "error": null,
+      "html": "results/run_004/final_report.html"
+    }
+  },
+  "active_stage": "A_harness"
+}

@@ -1,0 +1,24 @@
+{
+    'passed': True,
+    'total_pairs': 2425,
+    'complete_pairs': 1924,
+    'contrast_pairs': 570,
+    'total_records': 4379,
+    'review': {
+        'reviewer': 'gpt-5.4',
+        'sample_size': 200,
+        'agreed_count': 178,
+        'disputed_count': 22,
+        'agreement_rate': 0.89,
+        'agreement_ci95': [0.8391, 0.9262],
+        'spend_usd': 0.4195,
+        'scope': 'new generator-v2 pairs only',
+        'carried_over_curated_agreement': {
+            'n': 274,
+            'agreement_v1': 0.7956,
+            'agreement_curated': 0.8321
+        },
+        'policy': 'disagreements are queued for a human, not auto-dropped (see 
+review_queue)'
+    }
+}

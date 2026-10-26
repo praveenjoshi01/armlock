@@ -1,0 +1,8 @@
+{
+  "harness_config_hash": "d36e13488404b2df",
+  "harness_code_hash": "5f3fb745ffe90029",
+  "scenarios_hash": "ae0d79e7c4f208b2",
+  "model_digests": {
+    "ollama/qwen3.8:27b-mlx": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e"
+  }
+}

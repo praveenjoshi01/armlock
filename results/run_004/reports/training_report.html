@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Module C — Gate Training Report</title><style>
+:root{--bg:#0d0f11;--surface:#1a1a19;--ink:#f0efec;--muted:#a2a59f;--line:#2c2c2a;--blue:#3987e5;--good:#3fbf3f;--bad:#e66767}
+@media (prefers-color-scheme: light){:root{--bg:#fafaf8;--surface:#fff;--ink:#1a1a19;--muted:#5d605a;--line:#dcdcd6}}
+body{background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;margin:0;padding:32px 16px;line-height:1.6}
+.container{max-width:1000px;margin:0 auto}
+h1,h2,h3{font-weight:600}h1{border-bottom:1px solid var(--line);padding-bottom:12px}
+table{width:100%;border-collapse:collapse;margin:16px 0;background:var(--surface);font-size:13.5px;display:block;overflow-x:auto}
+th,td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{color:var(--muted);font-size:12px;text-transform:uppercase}
+code{font-family:"IBM Plex Mono",monospace;background:var(--surface);padding:1px 5px;border-radius:4px;font-size:.92em}
+pre{background:var(--surface);padding:12px;border-radius:8px;overflow-x:auto}pre code{padding:0}
+blockquote{border-left:3px solid var(--blue);margin:12px 0;padding:2px 14px;color:var(--muted)}
+a{color:var(--blue)}hr{border:0;border-top:1px solid var(--line);margin:24px 0}
+.pass{color:var(--good);font-weight:600}.fail{color:var(--bad);font-weight:600}
+</style></head><body><div class="container"><h1 id="module-c-gate-training-report">Module C — Gate Training Report</h1>
+<p><strong>Run ID:</strong> <code>run_004</code> · <strong>Date:</strong> 2026-10-23 21:34</p>
+<blockquote><strong>Training path: Clef-flash decision head (frozen Qwen3.5-9B backbone, head fine-tuned).</strong> No fallback was used.</blockquote>
+<h2 id="1-confirm-check-spec-6-3">1. CONFIRM check (spec 6.3)</h2>
+<ul><li>Interface: Qwen3_5ForConditionalGeneration backbone + JointSchemaHead (joint_head.safetensors) scored by load_release_model()/systemone(); a 'choice' question returns one logit per option.</li><li>Head: <code>{"hidden_size": 4096, "width": 1024, "routing_layers": 2, "layers": 4, "heads": 16, "feedforward": 4096}</code>, 122 tensors, loaded with <code>strict=True</code>.</li><li>Snapshot: <code>/Users/praveenjoshi/.cache/huggingface/hub/models--Cloudflare--clef-flash/snapshots/f0b7d3cd65296abfe459e6c228b618f5d8b26d2f</code></li><li>MPS available: True; the 9B backbone runs in bf16 on MPS (reference PyTorch kernels for linear attention).</li><li>LoRA: <strong>not used.</strong> The backbone is frozen and only the decision head is trained (optional per spec 6.3); LoRA would need a backbone forward/backward per step and was out of budget on this machine.</li></ul>
+<h2 id="2-configuration">2. Configuration</h2>
+<ul><li>Train records 5,917, validation records 739; history window N = 5</li><li>Epochs 6, batch = 8 pairs, grad-accum 1, lr 5e-05, weight decay 0.01, head dropout 0.1</li><li>Loss: C1 cross-entropy (sqrt-inverse-frequency class weights) + 0.5 × C2 pairwise RLCD margin loss (margin 1.0)</li><li>Memory: Gemma is unloaded before the backbone loads; the backbone is unloaded after its hidden states are cached.</li></ul>
+<h2 id="3-validation-metrics-per-epoch">3. Validation metrics per epoch</h2>
+<p>Decision rule at the default thresholds (τ_allow 0.9, τ_block 0.5).</p>
+<table><thead><tr><th>Epoch</th><th>Train loss</th><th>Val loss</th><th>Val acc (argmax)</th><th>Harmful pass-through</th><th>Benign false blocks</th><th>Escalate rate</th><th>Seconds</th></tr></thead><tbody><tr><td>0 (pretrained head, zero-shot)</td><td>–</td><td>–</td><td>–</td><td>0.00%</td><td>100.00%</td><td>55.48%</td><td>–</td></tr><tr><td>1</td><td>0.749</td><td>0.3082</td><td>88.2%</td><td>2.55%</td><td>17.12%</td><td>13.26%</td><td>313.4</td></tr><tr><td>2</td><td>0.2954</td><td>0.1789</td><td>94.2%</td><td>0.00%</td><td>11.42%</td><td>11.37%</td><td>308.4</td></tr><tr><td>3</td><td>0.1719</td><td>0.2302</td><td>92.3%</td><td>0.43%</td><td>12.79%</td><td>9.74%</td><td>308.4</td></tr><tr><td>4</td><td>0.1368</td><td>0.199</td><td>95.4%</td><td>2.55%</td><td>3.20%</td><td>8.80%</td><td>308.3</td></tr><tr><td>5</td><td>0.1059</td><td>0.1744</td><td>95.8%</td><td>0.85%</td><td>4.57%</td><td>9.34%</td><td>308.3</td></tr><tr><td>6</td><td>0.111</td><td>0.1643</td><td>97.0%</td><td>1.28%</td><td>3.42%</td><td>9.88%</td><td>308.5</td></tr></tbody></table>
+<p>Best epoch by validation loss: <strong>6</strong>.</p>
+<h2 id="4-frozen-thresholds-tuned-on-validation-only">4. Frozen thresholds (tuned on validation only)</h2>
+<ul><li>τ_allow = <strong>0.999</strong>, τ_block = <strong>0.2</strong></li><li>Validation harmful pass-through <strong>0.00%</strong> (target &lt; 1%), benign false blocks <strong>10.05%</strong> (target &lt; 5%), escalate rate 13.40%</li><li>Targets met on validation: <strong><span class="fail">FAIL</span></strong>. Validation is drawn from the training distribution, so these are optimistic; Module D reports the held-out test, decomposed and harness slices.</li></ul>
+<h2 id="5-checkpoints">5. Checkpoints</h2>
+<table><thead><tr><th>Epoch</th><th>File</th><th>Val loss</th><th>Size (MB)</th></tr></thead><tbody><tr><td>1</td><td><code>checkpoint_epoch_1.pt</code></td><td>0.3082</td><td>487.09</td></tr><tr><td>2</td><td><code>checkpoint_epoch_2.pt</code></td><td>0.1789</td><td>487.09</td></tr><tr><td>3</td><td><code>checkpoint_epoch_3.pt</code></td><td>0.2302</td><td>487.09</td></tr><tr><td>4</td><td><code>checkpoint_epoch_4.pt</code></td><td>0.199</td><td>487.09</td></tr><tr><td>5</td><td><code>checkpoint_epoch_5.pt</code></td><td>0.1744</td><td>487.09</td></tr><tr><td>6</td><td><code>checkpoint_epoch_6.pt</code></td><td>0.1643</td><td>487.09</td></tr><tr><td>best</td><td><code>best_checkpoint.pt</code> (epoch 6)</td><td></td><td></td></tr></tbody></table>
+<h2 id="6-runtime-and-hardware">6. Runtime and hardware</h2>
+<ul><li>Machine: macOS-26.6.2-arm64-arm-64bit; device MPS</li><li>Backbone caching: 6885.1 s; training wall time 1867.9 s; peak RSS 28.4 GB</li></ul></div></body></html>

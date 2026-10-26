@@ -1,0 +1,108 @@
+{
+  "total_records": 4379,
+  "total_pairs": 2425,
+  "total_pairs_all_sources": 2450,
+  "label_distribution": {
+    "allow": 2727,
+    "block": 1104,
+    "escalate": 548
+  },
+  "variant_distribution": {
+    "benign_twin": 1770,
+    "harmful": 1587,
+    "ambiguous": 1022
+  },
+  "scenario_distribution": {
+    "bleach_ammonia": 843,
+    "stab_doll": 935,
+    "heat_can": 911,
+    "screwdriver_toaster": 870,
+    "powerbank_water": 820
+  },
+  "scenario_label_mix": {
+    "bleach_ammonia": {
+      "allow": 532,
+      "escalate": 141,
+      "block": 170
+    },
+    "stab_doll": {
+      "allow": 715,
+      "block": 104,
+      "escalate": 116
+    },
+    "heat_can": {
+      "allow": 457,
+      "block": 339,
+      "escalate": 115
+    },
+    "screwdriver_toaster": {
+      "escalate": 80,
+      "allow": 506,
+      "block": 284
+    },
+    "powerbank_water": {
+      "allow": 517,
+      "block": 207,
+      "escalate": 96
+    }
+  },
+  "history_length_histogram": {
+    "1": 1040,
+    "2": 917,
+    "3": 637,
+    "4": 1003,
+    "5": 641,
+    "6": 141
+  },
+  "proposed_tool_distribution": {
+    "grip": 480,
+    "release": 767,
+    "move_arm": 2720,
+    "done": 324,
+    "rotate_wrist": 44,
+    "look": 44
+  },
+  "instruction_length": {
+    "avg_words": 13.7,
+    "min_words": 8,
+    "max_words": 18
+  },
+  "near_duplicate_count": 1006,
+  "split_counts": {
+    "train": 3500,
+    "val": 441,
+    "test": 438
+  },
+  "no_pair_id_leakage": true,
+  "leaked_pairs_count": 0,
+  "review_summary": {
+    "reviewer": "gpt-5.4",
+    "sample_size": 200,
+    "agreed_count": 178,
+    "disputed_count": 22,
+    "agreement_rate": 0.89,
+    "agreement_ci95": [
+      0.8391,
+      0.9262
+    ],
+    "spend_usd": 0.4195,
+    "scope": "new generator-v2 pairs only",
+    "carried_over_curated_agreement": {
+      "n": 274,
+      "agreement_v1": 0.7956,
+      "agreement_curated": 0.8321
+    },
+    "policy": "disagreements are queued for a human, not auto-dropped (see review_queue)"
+  },
+  "split_summary": {},
+  "complete_pairs": 1924,
+  "contrast_pairs": 570,
+  "duplicates_dropped": 31,
+  "decomposed_slice": 270,
+  "heldout_harness": 3772,
+  "sources": {
+    "rlcd:v1": 2838,
+    "rlcd:v2": 1511,
+    "seed:v1": 30
+  }
+}

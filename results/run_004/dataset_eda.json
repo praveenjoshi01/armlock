@@ -1,0 +1,126 @@
+{
+  "total_records": 7395,
+  "total_pairs": 2425,
+  "total_pairs_all_sources": 4190,
+  "label_distribution": {
+    "allow": 4504,
+    "block": 2364,
+    "escalate": 527
+  },
+  "variant_distribution": {
+    "harmful": 2567,
+    "benign_twin": 2186,
+    "safe_handling": 1620,
+    "ambiguous": 1022
+  },
+  "scenario_distribution": {
+    "screwdriver_toaster": 1526,
+    "heat_can": 1611,
+    "powerbank_water": 1400,
+    "bleach_ammonia": 1383,
+    "stab_doll": 1475
+  },
+  "scenario_label_mix": {
+    "screwdriver_toaster": {
+      "allow": 847,
+      "block": 599,
+      "escalate": 80
+    },
+    "heat_can": {
+      "allow": 818,
+      "block": 678,
+      "escalate": 115
+    },
+    "powerbank_water": {
+      "block": 426,
+      "allow": 885,
+      "escalate": 89
+    },
+    "bleach_ammonia": {
+      "allow": 886,
+      "block": 369,
+      "escalate": 128
+    },
+    "stab_doll": {
+      "allow": 1068,
+      "block": 292,
+      "escalate": 115
+    }
+  },
+  "history_length_histogram": {
+    "1": 1450,
+    "2": 1427,
+    "3": 1175,
+    "4": 1641,
+    "5": 1181,
+    "6": 521
+  },
+  "proposed_tool_distribution": {
+    "done": 764,
+    "move_arm": 4716,
+    "grip": 810,
+    "release": 977,
+    "rotate_wrist": 84,
+    "look": 44
+  },
+  "instruction_length": {
+    "avg_words": 14.8,
+    "min_words": 8,
+    "max_words": 26
+  },
+  "near_duplicate_count": 2018,
+  "split_counts": {
+    "train": 5917,
+    "val": 739,
+    "test": 739
+  },
+  "no_pair_id_leakage": true,
+  "leaked_pairs_count": 0,
+  "review_summary": {
+    "reviewer": "gpt-5.4",
+    "sample_size": 200,
+    "agreed_count": 178,
+    "disputed_count": 22,
+    "agreement_rate": 0.89,
+    "agreement_ci95": [
+      0.8391,
+      0.9262
+    ],
+    "spend_usd": 0.4195,
+    "scope": "carried over from run_003; hard negatives are programmatic and rule-labelled by construction (not reviewed)",
+    "carried_over_curated_agreement": {
+      "n": 274,
+      "agreement_v1": 0.7956,
+      "agreement_curated": 0.8321
+    },
+    "policy": "disagreements are queued for a human, not auto-dropped (see review_queue)"
+  },
+  "split_summary": {},
+  "hard_negative_pairs": 1740,
+  "complete_pairs": 3200,
+  "contrast_pairs": 1839,
+  "duplicates_dropped": 0,
+  "decomposed_slice": 270,
+  "heldout_harness": 3383,
+  "hard_test": 742,
+  "hard_test_labels": {
+    "allow": 432,
+    "block": 310
+  },
+  "hard_by_family": {
+    "benign_near_hazard:allow": 300,
+    "benign_near_hazard:block": 116,
+    "euphemism:allow": 540,
+    "euphemism:block": 440,
+    "safe_handling:allow": 900,
+    "safe_handling:block": 720
+  },
+  "hard_rejected_chains": {},
+  "relabels_v2_1": 37,
+  "sources": {
+    "rlcd:v2": 1511,
+    "rlcd:v1": 2838,
+    "hard_negative:v1": 3016,
+    "seed:v1": 30
+  }
+}

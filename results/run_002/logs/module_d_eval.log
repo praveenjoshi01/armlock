@@ -1,0 +1,26 @@
+W1022 07:18:43.724000 33289 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/760 [00:00<?, ?it/s]Loading weights:  19%|█▉        | 148/760 [00:00<00:00, 960.05it/s]Loading weights:  32%|███▏      | 245/760 [00:00<00:00, 579.03it/s]Loading weights:  41%|████      | 309/760 [00:00<00:00, 527.68it/s]Loading weights:  48%|████▊     | 364/760 [00:00<00:00, 410.61it/s]Loading weights:  54%|█████▍    | 409/760 [00:00<00:00, 386.76it/s]Loading weights: 100%|██████████| 760/760 [00:00<00:00, 854.27it/s]
+Scoring 406 test records with the trained head
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+Scoring 270 decomposed records with the trained head
+Scoring 1568 heldout_harness records with the trained head
+Scoring 406 test records with the zero_shot head
+Scoring 270 decomposed records with the zero_shot head
+Scoring 1568 heldout_harness records with the zero_shot head
+Gemma judge on 406 test records
+Gemma judge on 270 decomposed records
+Gemma judge on 400 heldout_harness records
+                   Module D - offline metrics (trained gate)                    
+┏━━━━━━━━━━━━━━━━┳━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━┓
+┃                ┃      ┃ Harmful         ┃ Benign false   ┃          ┃        ┃
+┃ Set            ┃ N    ┃ pass-through    ┃ blocks         ┃ Accuracy ┃ ECE    ┃
+┡━━━━━━━━━━━━━━━━╇━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━┩
+│ test           │ 406  │ 1.45% (0.0026,  │ 2.83% (0.0144, │ 97.0%    │ 0.0255 │
+│                │      │ 0.0776)         │ 0.0548)        │          │        │
+│ decomposed     │ 270  │ 54.00% (0.404,  │ 77.73%         │ 18.1%    │ 0.6813 │
+│                │      │ 0.6703)         │ (0.7178,       │          │        │
+│                │      │                 │ 0.8272)        │          │        │
+│ heldout_harne… │ 1568 │ 19.57% (0.1501, │ 10.43% (0.089, │ 88.2%    │ 0.0981 │
+│                │      │ 0.2512)         │ 0.1218)        │          │        │
+└────────────────┴──────┴─────────────────┴────────────────┴──────────┴────────┘

@@ -1,0 +1,35 @@
+Initiating Module C — Gate Model Training...
+Path Selected: Clef-flash decision head (frozen Qwen3.5-9B backbone, head 
+fine-tuned)
+Qwen3_5ForConditionalGeneration backbone + JointSchemaHead 
+(joint_head.safetensors) scored by load_release_model()/systemone(); a 'choice' 
+question returns one logit per option. Head config {'hidden_size': 4096, 
+'width': 1024, 'routing_layers': 2, 'layers': 4, 'heads': 16, 'feedforward': 
+4096}, 122 tensors.
+
+W1022 06:06:01.511000 31048 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/760 [00:00<?, ?it/s]Loading weights:   0%|          | 2/760 [00:00<00:45, 16.70it/s]Loading weights:  10%|▉         | 75/760 [00:00<00:01, 343.17it/s]Loading weights:  23%|██▎       | 176/760 [00:00<00:01, 458.53it/s]Loading weights:  48%|████▊     | 364/760 [00:00<00:00, 539.05it/s]Loading weights: 100%|██████████| 760/760 [00:00<00:00, 1009.45it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+/Users/praveenjoshi/Code/Code2026/HumanoidSecuredSys1DM/gate/trainer.py:188: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  "ce_loss": out["ce_loss"].item(), "margin_loss": float(out["margin_loss"]),
+Epoch 1 | Train Loss: 0.9349 | Val Loss: 0.5793 | Val Acc: 86.4% | Harmful 
+Pass-Through: 29.85% | Benign False-Blocks: 9.15%
+Epoch 2 | Train Loss: 0.3467 | Val Loss: 0.1667 | Val Acc: 95.5% | Harmful 
+Pass-Through: 0.00% | Benign False-Blocks: 5.23%
+Epoch 3 | Train Loss: 0.2238 | Val Loss: 0.0588 | Val Acc: 98.3% | Harmful 
+Pass-Through: 0.00% | Benign False-Blocks: 2.61%
+Epoch 4 | Train Loss: 0.1581 | Val Loss: 0.0576 | Val Acc: 98.8% | Harmful 
+Pass-Through: 2.99% | Benign False-Blocks: 0.00%
+Epoch 5 | Train Loss: 0.1292 | Val Loss: 0.0413 | Val Acc: 98.5% | Harmful 
+Pass-Through: 0.00% | Benign False-Blocks: 1.31%
+Epoch 6 | Train Loss: 0.0580 | Val Loss: 0.1020 | Val Acc: 97.5% | Harmful 
+Pass-Through: 1.49% | Benign False-Blocks: 4.25%
+
+Training Completed Successfully!
+Best Checkpoint: results/run_002/best_checkpoint.pt
+Frozen Thresholds: tau_allow = 0.76, tau_block = 0.2
+Validation Harmful Pass-Through: 0.00% (target < 1%)
+Validation Benign False-Blocks: 0.65% (target < 5%)
+Report: results/None/training_report.html

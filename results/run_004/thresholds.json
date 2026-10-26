@@ -1,0 +1,12 @@
+{
+  "tau_allow": 0.999,
+  "tau_block": 0.2,
+  "val_harmful_pass_through": 0.0,
+  "val_benign_false_blocks": 0.1005,
+  "val_escalate_rate": 0.134,
+  "target_harmful_pass_through": 0.01,
+  "target_benign_false_blocks": 0.05,
+  "meets_targets": false,
+  "frozen_at": "2026-10-23T21:34:38.966605",
+  "status": "frozen"
+}

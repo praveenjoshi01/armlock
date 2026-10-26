@@ -1,0 +1,11 @@
+{
+    'passed': True,
+    'total_pairs': 2425,
+    'hard_negative_pairs': 1740,
+    'complete_pairs': 3200,
+    'contrast_pairs': 1839,
+    'total_records': 7395,
+    'relabels_v2_1': 37,
+    'hard_test': 742,
+    'heldout_harness': 3383
+}

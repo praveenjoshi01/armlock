@@ -1,0 +1,17 @@
+# secrets and local state
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+.DS_Store
+
+# large or regenerable artefacts (see README: "What is not in the repo")
+results/*/hidden_cache/
+results/*/checkpoints/
+results/*/best_checkpoint.pt
+results/archive/
+results/run_001
+*.pt
+
+# local scratch and unrelated working notes
+founder/

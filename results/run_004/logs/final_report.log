@@ -1,0 +1,8 @@
+Generating final cohesive report for run_id='run_004'...
+Report Generation Failed: Cannot build the final report: missing artifacts in 
+results/run_004: ['budget.json']
+Generating final cohesive report for run_id='run_004'...
+Final Cohesive Report Generated Successfully!
+HTML Report: results/run_004/final_report.html
+Markdown:    results/run_004/final_report.md
+Legacy MD:   results/run_004/report.md

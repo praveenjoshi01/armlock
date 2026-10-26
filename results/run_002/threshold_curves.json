@@ -1,0 +1,2705 @@
+{
+  "best_thresholds": {
+    "tau_allow": 0.76,
+    "tau_block": 0.2,
+    "harmful_pass_through": 0.0,
+    "benign_false_blocks": 0.0065,
+    "escalate_rate": 0.0792,
+    "meets_targets": true
+  },
+  "grid_points": [
+    {
+      "tau_allow": 0.5,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.5,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.5,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.5,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.5,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.5,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.5,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.5,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.5,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.5,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.5,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.52,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.52,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.52,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.52,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.52,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.52,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.52,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.52,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.52,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.52,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.52,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.54,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.54,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.54,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.54,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.54,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.54,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.54,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.54,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.54,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.54,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.54,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.56,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.56,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.56,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.56,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.56,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.56,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.56,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.56,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.56,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.56,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.56,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.58,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.58,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.58,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.58,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.58,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.58,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.58,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.58,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.58,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.58,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.58,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.6,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.6,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.6,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.6,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.6,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.6,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.6,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.6,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.6,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.6,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.6,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.62,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.62,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.62,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.62,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.62,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.62,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.62,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.62,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.62,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.62,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.62,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.64,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.64,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.64,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.64,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.64,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.64,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.64,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.64,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.64,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.64,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.64,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.66,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.66,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.66,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.66,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.66,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.66,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.66,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.66,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.66,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.66,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.66,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.68,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.68,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.68,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.68,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.68,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.68,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.68,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.68,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.68,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.68,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.68,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.7,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.7,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.7,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.7,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.7,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.7,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.7,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.7,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.7,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.7,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.7,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.72,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.72,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.72,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.72,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.72,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.72,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.72,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.72,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.72,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.72,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.72,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.74,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.74,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.74,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.74,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.74,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.74,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.74,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.74,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.74,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.74,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.74,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.76,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.76,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.76,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.76,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.76,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.76,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.76,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.76,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.76,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.76,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.76,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.78,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.78,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.78,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0817,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.78,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.78,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.78,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.78,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.78,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.78,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.78,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.78,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.8,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0817,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.8,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.8,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.8,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.8,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.8,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.8,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.8,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.8,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.8,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.8,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.82,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0817,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.82,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.82,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.82,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.82,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.82,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.82,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.82,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.82,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.82,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.82,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.84,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.84,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.84,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.84,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.84,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.84,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.84,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.84,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.84,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.84,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.84,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.86,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.86,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.86,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.86,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.86,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.86,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.86,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.86,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.86,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.86,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.86,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.88,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.88,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.88,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.88,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.88,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.88,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.88,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.88,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.88,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.88,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.88,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.9,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.9,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.9,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.9,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.9,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.9,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.9,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.9,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.9,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.9,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.9,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.92,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.92,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.92,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.92,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.92,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.92,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.92,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.92,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.92,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.92,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.92,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.94,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.94,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.94,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.94,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0916,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.94,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0916,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.94,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0916,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.94,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0916,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.94,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0916,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.94,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0916,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.94,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0916,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.94,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0916,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.96,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.96,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.96,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0891,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.96,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0916,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.96,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0916,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.96,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0916,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.96,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0916,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.96,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0916,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.96,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0916,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.96,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0916,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.96,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0916,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.98,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0229,
+      "escalate_rate": 0.0941,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.98,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0229,
+      "escalate_rate": 0.0965,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.98,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0229,
+      "escalate_rate": 0.0965,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.98,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0229,
+      "escalate_rate": 0.099,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.98,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0229,
+      "escalate_rate": 0.099,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.98,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0229,
+      "escalate_rate": 0.099,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.98,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0229,
+      "escalate_rate": 0.099,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.98,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0229,
+      "escalate_rate": 0.099,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.98,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0229,
+      "escalate_rate": 0.099,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.98,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0229,
+      "escalate_rate": 0.099,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.98,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0229,
+      "escalate_rate": 0.099,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.99,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0359,
+      "escalate_rate": 0.104,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.99,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0359,
+      "escalate_rate": 0.1064,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.99,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0359,
+      "escalate_rate": 0.1064,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.99,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0359,
+      "escalate_rate": 0.1089,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.99,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0359,
+      "escalate_rate": 0.1089,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.99,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0359,
+      "escalate_rate": 0.1089,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.99,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0359,
+      "escalate_rate": 0.1089,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.99,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0359,
+      "escalate_rate": 0.1089,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.99,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0359,
+      "escalate_rate": 0.1089,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.99,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0359,
+      "escalate_rate": 0.1089,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.99,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0359,
+      "escalate_rate": 0.1089,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.995,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0556,
+      "escalate_rate": 0.1188,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.995,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0556,
+      "escalate_rate": 0.1213,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.995,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0556,
+      "escalate_rate": 0.1213,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.995,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0556,
+      "escalate_rate": 0.1238,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.995,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0556,
+      "escalate_rate": 0.1238,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.995,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0556,
+      "escalate_rate": 0.1238,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.995,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0556,
+      "escalate_rate": 0.1238,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.995,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0556,
+      "escalate_rate": 0.1238,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.995,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0556,
+      "escalate_rate": 0.1238,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.995,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0556,
+      "escalate_rate": 0.1238,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.995,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0556,
+      "escalate_rate": 0.1238,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.999,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.1275,
+      "escalate_rate": 0.1733,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.999,
+      "tau_block": 0.25,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.1275,
+      "escalate_rate": 0.1757,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.999,
+      "tau_block": 0.3,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.1275,
+      "escalate_rate": 0.1757,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.999,
+      "tau_block": 0.35,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.1275,
+      "escalate_rate": 0.1782,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.999,
+      "tau_block": 0.4,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.1275,
+      "escalate_rate": 0.1782,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.999,
+      "tau_block": 0.45,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.1275,
+      "escalate_rate": 0.1782,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.999,
+      "tau_block": 0.5,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.1275,
+      "escalate_rate": 0.1782,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.999,
+      "tau_block": 0.55,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.1275,
+      "escalate_rate": 0.1782,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.999,
+      "tau_block": 0.6,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.1275,
+      "escalate_rate": 0.1782,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.999,
+      "tau_block": 0.65,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.1275,
+      "escalate_rate": 0.1782,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.999,
+      "tau_block": 0.7,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.1275,
+      "escalate_rate": 0.1782,
+      "meets_targets": false
+    }
+  ],
+  "tau_allow_sweep": [
+    {
+      "tau_allow": 0.5,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.52,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.54,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.56,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0767,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.58,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.6,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.62,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0299,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.64,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.66,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.68,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.7,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.72,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.74,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0149,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.76,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.78,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0065,
+      "escalate_rate": 0.0792,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.8,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0817,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.82,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0098,
+      "escalate_rate": 0.0817,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.84,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.86,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.88,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.9,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.92,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0842,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.94,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.96,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0131,
+      "escalate_rate": 0.0866,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.98,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0229,
+      "escalate_rate": 0.0941,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.99,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0359,
+      "escalate_rate": 0.104,
+      "meets_targets": true
+    },
+    {
+      "tau_allow": 0.995,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.0556,
+      "escalate_rate": 0.1188,
+      "meets_targets": false
+    },
+    {
+      "tau_allow": 0.999,
+      "tau_block": 0.2,
+      "harmful_pass_through": 0.0,
+      "benign_false_blocks": 0.1275,
+      "escalate_rate": 0.1733,
+      "meets_targets": false
+    }
+  ],
+  "total_val_samples": 404,
+  "total_val_blocks": 67,
+  "total_val_allows": 306
+}

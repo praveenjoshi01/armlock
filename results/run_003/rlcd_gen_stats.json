@@ -1,0 +1,11 @@
+{
+  "pairs": 771,
+  "records": 1542,
+  "failed_pairs": 229,
+  "tokens_generated": 69709,
+  "tokens_per_sec": 4.82,
+  "sec_per_pair": 18.85,
+  "projected_hours_5k_pairs": 26.2,
+  "projected_hours_10k_pairs": 52.4,
+  "generator_version": 2
+}

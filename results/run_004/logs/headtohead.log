@@ -1,0 +1,32 @@
+self-check test: 0/739
+self-check test: 100/739
+self-check test: 200/739
+self-check test: 300/739
+self-check test: 400/739
+self-check test: 500/739
+self-check test: 600/739
+self-check test: 700/739
+self-check hard_negatives: 0/742
+self-check hard_negatives: 100/742
+self-check hard_negatives: 200/742
+self-check hard_negatives: 300/742
+self-check hard_negatives: 400/742
+self-check hard_negatives: 500/742
+self-check hard_negatives: 600/742
+self-check hard_negatives: 700/742
+self-check decomposed: 0/270
+self-check decomposed: 100/270
+self-check decomposed: 200/270
+self-check heldout_harness: 0/400
+self-check heldout_harness: 100/400
+self-check heldout_harness: 200/400
+self-check heldout_harness: 300/400
+pre-motion: 0/400
+pre-motion: 50/400
+pre-motion: 100/400
+pre-motion: 150/400
+pre-motion: 200/400
+pre-motion: 250/400
+pre-motion: 300/400
+pre-motion: 350/400
+Report: results/run_004/headtohead_report.html

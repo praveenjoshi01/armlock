@@ -127,6 +127,37 @@ print(len(rows), rows[0]["instruction"], "->", rows[0]["label"])
 
 ---
 
+## Use it: guard a robot's tool executor
+
+`gate/guard.py` is the integration seam. It wraps any executor, fails closed, routes `escalate` to a handler you provide, and writes a tamper-evident audit log (each entry carries the hash of the previous one).
+
+```python
+from gate.inference import SafetyGateInference
+from gate.guard import ArmGuard, verify_audit, summarise_audit
+
+guard = ArmGuard(SafetyGateInference("run_004"), audit_path="audit.jsonl",
+                 on_escalate=lambda ctx, result: ask_operator(ctx["proposed_action"]))   # return True to approve
+safe_execute = guard.wrap(robot.execute_tool)
+
+result = safe_execute(instruction, scene_text, history, {"tool": "release", "args": {"arm": "left"}})
+# blocked -> {"success": False, "message": "Action refused by safety controller.", "guard": GuardResult(...)}
+
+print(summarise_audit("audit.jsonl"))   # decisions, fail-closed events, latency, chain_ok
+print(verify_audit("audit.jsonl"))      # (True, None), or (False, index_of_first_edited_entry)
+```
+
+## Audit your own policy
+
+```bash
+./sg audit --policy <ollama-model> --trials 10 --gate-run run_004
+```
+
+One command runs the five hazard scenarios against a local policy and writes `audits/<policy>/audit_report.html` (and `.md`): the verdict on the refusal gap, harmful and benign task completion with no defence, with the pre-motion check and with the trained gate in the loop (95% Wilson intervals), a per-scenario table, the verified audit log of every gate decision, the protocol, what the audit does not show, and SHA-256 hashes of the evidence files. Trials are resumable and everything runs locally. `--gate-run` is optional; without it the gate arm is skipped.
+
+## Does the gate beat a free check?
+
+Only partly. `./sg headtohead` compares it with a pre-motion check (ask the policy once, before moving), a per-step self-check by the same policy, and two keyword heuristics. On explicit harmful tasks the free pre-motion check stops 0/200 harmful tasks with 199/200 benign tasks kept, the same end-to-end result as the gate. Per action the gate is clearly better than the self-check (test split: 0.0% vs 12.3% harmful passed, 8.9% vs 21.6% benign blocked). The report is `results/run_004/headtohead_report.md`. `./sg implicit` then tests the case the free check should struggle with: neutral instructions where the hazard is only inferable from the scene. It did not struggle: with no defence 80/80 harmful tasks were completed; the pre-motion check and the gate each stopped all 80 (0/80, 95% CI to 4.6%). The clues were strong (labelled bottles, a "Li-ion" brick) and the test has no benign twins, so read it as "no failure found", not as proof.
+
 ## Repository layout
 
 ```

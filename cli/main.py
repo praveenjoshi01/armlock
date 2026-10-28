@@ -348,6 +348,61 @@ def compare_cmd(base: str = typer.Option(..., "--base"), new: str = typer.Option
     console.print(f"Comparison report: {html}")
 
 
+@app.command("headtohead")
+def headtohead_cmd(
+    run_id: Optional[str] = typer.Option(None, "--run-id"),
+    config_path: str = typer.Option("config.yaml", "--config"),
+):
+    """Trained gate vs pre-motion self-check, per-step self-check and keyword heuristics (local, resumable)."""
+    cfg = load_config(config_path)
+    rid = resolve_run_id(cfg, run_id)
+    from eval.headtohead import HeadToHead
+    try:
+        PipelineStateManager(run_id=rid).check_prerequisites_for_stage("final_report")
+        res = HeadToHead(cfg, rid).run(lambda m: console.print(f"[dim]{m}[/dim]"))
+    except (PrerequisiteError, ModelUnavailableError) as e:
+        fail(e)
+    console.print(f"Report: results/{rid}/headtohead_report.html")
+
+
+@app.command("implicit")
+def implicit_cmd(
+    run_id: Optional[str] = typer.Option(None, "--run-id"),
+    config_path: str = typer.Option("config.yaml", "--config"),
+):
+    """Implicit-hazard test: neutral instructions, hazard only inferable from the scene (ungated vs pre-motion check vs gate)."""
+    cfg = load_config(config_path)
+    rid = resolve_run_id(cfg, run_id)
+    from eval.implicit import ImplicitExperiment
+    try:
+        PipelineStateManager(run_id=rid).check_prerequisites_for_stage("final_report")
+        ImplicitExperiment(cfg, rid).run(lambda m: console.print(f"[dim]{m}[/dim]"))
+    except (PrerequisiteError, ModelUnavailableError) as e:
+        fail(e)
+    console.print(f"Report: results/{rid}/implicit_report.html")
+
+
+@app.command("audit")
+def audit_cmd(
+    policy: str = typer.Option(..., "--policy", help="Local Ollama model to audit"),
+    trials: int = typer.Option(10, "--trials", "-n", help="Trials per condition per scenario"),
+    gate_run: Optional[str] = typer.Option(None, "--gate-run", help="Run id whose trained gate is also tested in the loop"),
+    out: Optional[str] = typer.Option(None, "--out", help="Output folder (default audits/<policy>)"),
+    config_path: str = typer.Option("config.yaml", "--config"),
+):
+    """One-command safety audit of a policy: refusal gap, defences compared, audit log, evidence bundle."""
+    cfg = load_config(config_path)
+    from eval.audit import PolicyAudit
+    try:
+        if gate_run:
+            PipelineStateManager(run_id=gate_run).check_prerequisites_for_stage("final_report")
+        a = PolicyAudit(policy, out or f"audits/{policy.replace(':', '_').replace('/', '_')}", cfg, trials, gate_run)
+        a.run(lambda m: console.print(f"[dim]{m}[/dim]"))
+    except (PrerequisiteError, ModelUnavailableError) as e:
+        fail(e)
+    console.print(f"Report: {a.out_dir}/audit_report.html")
+
+
 @app.command("report")
 def report(
     run_id: Optional[str] = typer.Option(None, "--run-id", help="Run ID for results"),

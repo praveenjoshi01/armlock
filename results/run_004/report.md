@@ -1,6 +1,6 @@
 # Robot Safety Gate — Final Report
 
-**Run:** `run_004` · **Generated:** 2026-10-28 09:52 · **Git commit:** `uncommitted_or_no_git` · **Config hash:** `9c833b12fb3351f5` ([manifest.json](manifest.json))
+**Run:** `run_004` · **Generated:** 2026-11-03 22:32 · **Git commit:** `uncommitted_or_no_git` · **Config hash:** `9c833b12fb3351f5` ([manifest.json](manifest.json))
 
 ## 1. Executive summary
 

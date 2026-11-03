@@ -3,7 +3,8 @@
 # Review (OpenAI, needs a real OPENAI_API_KEY in .env), training and evaluation follow; see README.
 set -euo pipefail
 cd "$(dirname "$0")/.."
-mkdir -p results/run_002/logs
-./sg harness run --dry-run
-./sg harness run --replication 2>&1 | tee -a results/run_002/logs/module_a_replication.log
-./sg data generate 2>&1 | tee -a results/run_002/logs/module_b_generate.log
+RUN=${RUN:-run_002}
+mkdir -p results/$RUN/logs
+./sg harness run --dry-run --run-id $RUN
+./sg harness run --replication --run-id $RUN 2>&1 | tee -a results/$RUN/logs/module_a_replication.log
+./sg data generate --run-id $RUN 2>&1 | tee -a results/$RUN/logs/module_b_generate.log

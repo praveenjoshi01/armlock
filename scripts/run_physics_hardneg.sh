@@ -17,7 +17,10 @@ L=results/$DST/logs
 for f in harness_report dataset_report training_report eval_report final_report comparison_report; do
   cp results/$DST/$f.html results/$DST/$f.md results/$DST/reports/
 done
-for r in run_002 run_003; do
+# Physics re-score of the earlier lineage runs (replays their recorded trials; no model calls). RESCORE lists the
+# run ids; the default is the original lineage. A run that already has a rescore_report is not re-scored.
+for r in ${RESCORE:-run_002 run_003}; do
+  [[ -s results/$r/rescore_report.md ]] || ./sg harness rescore --run-id $r 2>&1 | tee -a $L/rescore_$r.log
   cp results/$r/rescore_report.html results/$DST/reports/${r}_rescore_report.html
   cp results/$r/rescore_report.md results/$DST/reports/${r}_rescore_report.md
 done

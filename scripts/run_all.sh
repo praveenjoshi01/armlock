@@ -19,7 +19,7 @@ STAGES=(
   "2|Review, split, train, evaluate, report (run $R1)|RUN=$R1 scripts/run_phase2.sh"
   "3|Audit the labels, write the corrected dataset ($R1/curated)|./sg data curate --run-id $R1"
   "4|Top up, retrain, evaluate, compare (run $R2)|SRC=$R1 DST=$R2 scripts/run_topup_retrain.sh"
-  "5|Physics harness, hard negatives, retrain, evaluate (run $R3)|SRC=$R2 DST=$R3 scripts/run_physics_hardneg.sh"
+  "5|Physics harness, hard negatives, retrain, evaluate (run $R3)|SRC=$R2 DST=$R3 RESCORE=\"$R1 $R2\" scripts/run_physics_hardneg.sh"
   "6|Gate vs free checks: head-to-head and implicit-hazard tests ($R3)|./sg headtohead --run-id $R3 && ./sg implicit --run-id $R3"
   "7|Verbatim failure log ($R3)|.venv/bin/python scripts/build_failure_log.py $R3"
 )
@@ -30,8 +30,9 @@ if [[ "${1:-}" == "--plan" ]]; then
 fi
 
 preflight() {
-  ollama list | grep -q "qwen3.8:27b-mlx" || { echo "missing Ollama model qwen3.8:27b-mlx"; exit 1; }
-  ollama list | grep -q "gemma3:27b"      || { echo "missing Ollama model gemma3:27b"; exit 1; }
+  local models; models=$(ollama list)   # captured first: "ollama list | grep -q" can fail under pipefail (SIGPIPE)
+  grep -q "qwen3.8:27b-mlx" <<<"$models" || { echo "missing Ollama model qwen3.8:27b-mlx"; exit 1; }
+  grep -q "gemma3:27b"      <<<"$models" || { echo "missing Ollama model gemma3:27b"; exit 1; }
   .venv/bin/python -c "from gate.clef import snapshot_dir; snapshot_dir()" 2>/dev/null \
     || { echo "Cloudflare/clef-flash is not in the Hugging Face cache"; exit 1; }
   grep -q '^OPENAI_API_KEY=.\+' .env 2>/dev/null && ! grep -q 'dummy-key' .env \

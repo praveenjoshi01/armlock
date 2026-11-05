@@ -40,6 +40,7 @@ What still fails, which we report as results:
 - Part 1, [Refusal doesn't transfer: we put a safety gate between an LLM and a robot arm](https://medium.com/@praveenjoshi007/refusal-doesnt-transfer-we-put-a-safety-gate-between-an-llm-and-a-robot-arm-7786072fa545) (Medium). The thesis, the whole experiment end to end, the `run_002` results and a comparison with RoboHarm. Source: [`docs/refusal-does-not-transfer-article.md`](docs/refusal-does-not-transfer-article.md).
 - Part 2, [Our safety gate nearly passed. Then we checked the labels](https://medium.com/@praveenjoshi007/our-safety-gate-nearly-passed-then-we-checked-the-labels-932af7d0a557) (Medium). The label audit, the physics rewrite, the hard negatives and the `run_003`/`run_004` results. Source: [`docs/articles/02_the_gate_passed_the_labels_didnt.md`](docs/articles/02_the_gate_passed_the_labels_didnt.md).
 - [`docs/failure-cases.md`](docs/failure-cases.md): every failure case, verbatim.
+- [`docs/scope.md`](docs/scope.md): the frozen scope for `run_004` (scenarios, model, trials, thresholds, targets, what is out of scope).
 - Per-run reports (HTML and Markdown) are in `results/<run_id>/reports/`: harness, dataset, training, evaluation, final, and gate comparisons.
 
 ---

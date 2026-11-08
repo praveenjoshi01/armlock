@@ -1,0 +1,8 @@
+{
+    'passed': True,
+    'pairs': 2100,
+    'leaked': 0,
+    'handcheck': {'labelled': 0},
+    'agreement_rate': 0.9535,
+    'dropped_pairs': 0
+}

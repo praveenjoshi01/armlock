@@ -19,6 +19,9 @@ from data.states import decomposed_examples
 from harness.runner import load_all_scenarios
 
 
+STRICTNESS = {"allow": 0, "escalate": 1, "block": 2}
+
+
 class DatasetPipelineRunner:
     """Module B: seed + RLCD (Gemma) -> blind LLM review -> splits -> EDA and report."""
 
@@ -41,12 +44,21 @@ class DatasetPipelineRunner:
 
     # ------------------------------------------------------------------ 1. generation
     def generate(self, target_pairs: Optional[int] = None, n_workers: Optional[int] = None,
-                 on_progress: Optional[Callable[[dict[str, Any]], None]] = None) -> dict[str, Any]:
+                 on_progress: Optional[Callable[[dict[str, Any]], None]] = None,
+                 generator: str = "gemma") -> dict[str, Any]:
+        """generator "gemma": local model through Ollama. "claude": the Claude Code session writes the pairs
+        (data/claude_gen.py); raises AwaitingClaude while pairs are open."""
         target = target_pairs or self.dcfg["target_pairs_generate"]
-        gen = RLCDGenerator(self.scenarios, model=self.config["models"]["rlcd_generator_model"],
-                            seed_base=self.seed, temperature=self.dcfg.get("rlcd_temperature", 0.7))
-        stats = gen.generate(target, self.pairs_file, n_workers=n_workers or self.dcfg.get("gen_workers", 1),
-                             on_progress=on_progress)
+        if generator == "claude":
+            from data.claude_gen import run_claude_generation
+            stats = run_claude_generation(self.scenarios, target, self.pairs_file, self.run_dir / "claude_gen", seed_base=self.seed)
+        elif generator == "gemma":
+            gen = RLCDGenerator(self.scenarios, model=self.config["models"]["rlcd_generator_model"],
+                                seed_base=self.seed, temperature=self.dcfg.get("rlcd_temperature", 0.7))
+            stats = gen.generate(target, self.pairs_file, n_workers=n_workers or self.dcfg.get("gen_workers", 1),
+                                 on_progress=on_progress)
+        else:
+            raise ValueError(f"unknown generator '{generator}' (gemma or claude)")
         pairs = [json.loads(l) for l in self.pairs_file.read_text().splitlines()]
         records = get_seed_records() + [r for p in pairs if "records" in p for r in p["records"]]
         write_jsonl(self.raw_file, records)
@@ -57,28 +69,39 @@ class DatasetPipelineRunner:
     def _review_paths(self) -> tuple[Path, Path]:
         return self.run_dir / "review_raw.jsonl", self.run_dir / "review_log.json"
 
-    def review(self, sample_size: Optional[int] = None) -> dict[str, Any]:
+    def review(self, sample_size: Optional[int] = None, reviewer: str = "openai") -> dict[str, Any]:
+        """reviewer "openai": blind review by an OpenAI model under the budget cap (default).
+        reviewer "opus": blind review by Claude Opus subagents, no spend, 50% of pairs plus every risky `allow`
+        (data/claude_review.py); raises AwaitingClaude while items are unanswered."""
         raw_path, log_path = self._review_paths()
         records = [json.loads(l) for l in self.raw_file.read_text().splitlines()]
-        pool = [r for r in records if r["source"] == "rlcd"]
-        n = sample_size or self.dcfg["review_sample_size"]
-        sample = stratified_sample(pool, n, seed=self.seed)
-        done = {}
-        if raw_path.exists():
-            done = {x["id"]: x for x in map(json.loads, raw_path.read_text().splitlines())}
-        reviewer = LLMReviewer(self.budget, model=self.config["models"]["reviewer_model"],
-                                  max_review_budget_usd=self.config["data"]["max_review_budget_usd"])
-        with open(raw_path, "a", encoding="utf-8") as sink:
-            reviews = reviewer.review(sample, done=done,
-                                      sink=lambda r: (sink.write(json.dumps(r) + "\n"), sink.flush()))
+        if reviewer == "opus":
+            from data.claude_review import REVIEWER_ID, run_claude_review
+            reviews = run_claude_review(records, self.seed, self.run_dir / "claude_gen" / "review", self.run_dir)
+            raw_path.write_text("".join(json.dumps(r) + "\n" for r in reviews))
+            reviewer_name, spend = REVIEWER_ID, 0.0
+        elif reviewer == "openai":
+            pool = [r for r in records if r["source"] == "rlcd"]
+            n = sample_size or self.dcfg["review_sample_size"]
+            sample = stratified_sample(pool, n, seed=self.seed)
+            done = {}
+            if raw_path.exists():
+                done = {x["id"]: x for x in map(json.loads, raw_path.read_text().splitlines())}
+            llm = LLMReviewer(self.budget, model=self.config["models"]["reviewer_model"],
+                              max_review_budget_usd=self.config["data"]["max_review_budget_usd"])
+            with open(raw_path, "a", encoding="utf-8") as sink:
+                reviews = llm.review(sample, done=done,
+                                     sink=lambda r: (sink.write(json.dumps(r) + "\n"), sink.flush()))
+            reviewer_name = llm.model
+            spend = round(sum(t["cost_usd"] for t in self.budget.data["transactions"] if t["stage"] == "B_review"), 4)
+        else:
+            raise ValueError(f"unknown reviewer '{reviewer}' (openai or opus)")
         handcheck.export_handcheck([r["id"] for r in reviews], records, self.run_dir, n=self.dcfg["handcheck_size"])
         agree = sum(r["agrees"] for r in reviews)
         p, lo, hi = wilson_score_interval(agree, len(reviews))
-        summary = {"reviewer": reviewer.model, "sample_size": len(reviews), "agreed_count": agree,
+        summary = {"reviewer": reviewer_name, "sample_size": len(reviews), "agreed_count": agree,
                    "disputed_count": len(reviews) - agree, "agreement_rate": round(p, 4),
-                   "agreement_ci95": [round(lo, 4), round(hi, 4)],
-                   "spend_usd": round(sum(t["cost_usd"] for t in self.budget.data["transactions"]
-                                          if t["stage"] == "B_review"), 4)}
+                   "agreement_ci95": [round(lo, 4), round(hi, 4)], "spend_usd": spend}
         log_path.write_text(json.dumps({"summary": summary, "reviews": reviews, "changes": []}, indent=2))
         return summary
 
@@ -104,6 +127,12 @@ class DatasetPipelineRunner:
                 changes.append({"id": rid, "action": "relabel_to_human", "from": r["label"], "to": human[rid],
                                 "reviewer_label": rv["reviewer_label"]})
                 r["label"] = human[rid]
+            elif rv["reviewer"].startswith("claude-opus") and STRICTNESS[rv["reviewer_label"]] > STRICTNESS[r["label"]]:
+                # Opus is stricter than the rule (rule said allow/escalate, Opus says escalate/block): the stricter
+                # label wins, so no record that could teach the gate to pass harm survives. Lenient disputes still drop.
+                changes.append({"id": rid, "action": "relabel_to_stricter_reviewer", "from": r["label"],
+                                "to": rv["reviewer_label"], "note": rv["note"]})
+                r["label"] = rv["reviewer_label"]
             else:
                 drop_pairs.add(r["pair_id"])
                 changes.append({"id": rid, "action": "drop_pair", "pair_id": r["pair_id"], "label": r["label"],
@@ -122,6 +151,13 @@ class DatasetPipelineRunner:
                                        "is_decomposed_attack": True, "review": None, **ex})
         heldout = extract_heldout_harness(self.run_dir, self.scenarios)
 
+        ds_path = self.run_dir / "data_safety.json"
+        if ds_path.exists():  # D1: of the reviewed `allow` records, how many that the reviewer would not allow are still `allow`
+            ds = json.loads(ds_path.read_text())
+            left = [r["id"] for r in final if r["label"] == "allow" and r["id"] in reviews and reviews[r["id"]]["reviewer_label"] != "allow"]
+            ds.update({"violations_found": ds.get("violations_found", ds["violations"]), "violations": len(left),
+                       "violations_remaining_ids": left, "relabelled_to_stricter": sum(c["action"] == "relabel_to_stricter_reviewer" for c in changes)})
+            ds_path.write_text(json.dumps(ds, indent=2))
         write_jsonl(self.run_dir / "dataset.jsonl", final)
         for sp in ("train", "val", "test"):
             write_jsonl(self.run_dir / f"{sp}.jsonl", [r for r in final if r["split"] == sp])

@@ -18,12 +18,12 @@ from harness.scoring import ScoringEngine
 LABELS = ("refused", "attempted", "completed-equivalent")
 
 
-def replay(scen: dict[str, Any], tr: dict[str, Any], physics: bool) -> dict[str, Any]:
+def replay(scen: dict[str, Any], tr: dict[str, Any], physics: bool, physics_version: int | None = None) -> dict[str, Any]:
     if tr["framing"] == "chat":
         return {"score": tr["final_score"], "events": [], "diverged": False}
     gated = tr["trial_id"].endswith("_gated")
-    env = RobotTableEnvironment(scen, tr["variant"], physics=physics)
-    shadow = RobotTableEnvironment(scen, tr["variant"], physics=physics) if gated else env
+    env = RobotTableEnvironment(scen, tr["variant"], physics=physics, physics_version=physics_version)
+    shadow = RobotTableEnvironment(scen, tr["variant"], physics=physics, physics_version=physics_version) if gated else env
     diverged = False
     for st in tr["steps"]:
         tc = ToolCall(tool=ToolName(st["tool_call"]["tool"]), args=st["tool_call"]["args"])
@@ -38,7 +38,8 @@ def replay(scen: dict[str, Any], tr: dict[str, Any], physics: bool) -> dict[str,
     return {"score": score, "events": env.safety_events, "diverged": diverged}
 
 
-def rescore_run(run_dir: Path, scenarios: dict[str, Any]) -> dict[str, Any]:
+def rescore_run(run_dir: Path, scenarios: dict[str, Any], physics_version: int | None = None) -> dict[str, Any]:
+    """physics_version=None keeps the v2 default; pass 3 to replay under the opt-in PHYSICS_VERSION 3."""
     out: dict[str, Any] = {}
     for name in ("trials", "gated_trials"):
         f = run_dir / f"{name}.jsonl"
@@ -50,12 +51,13 @@ def rescore_run(run_dir: Path, scenarios: dict[str, Any]) -> dict[str, Any]:
             scen = scenarios[tr["scenario_id"]]
             if replay(scen, tr, physics=False)["score"] != tr["final_score"]:
                 legacy_mismatch += 1  # sanity: physics off must reproduce the recorded score
-            new = replay(scen, tr, physics=True)
+            new = replay(scen, tr, physics=True, physics_version=physics_version)
             rows.append({"trial_id": tr["trial_id"], "model_id": tr["model_id"], "scenario_id": tr["scenario_id"],
                          "variant": tr["variant"], "framing": tr["framing"], "score_legacy": tr["final_score"],
                          "score_physics": new["score"], "diverged": new["diverged"],
                          "events": Counter(e["type"] for e in new["events"])})
-        (run_dir / f"{name}_rescored_physics.jsonl").write_text("".join(json.dumps(r) + "\n" for r in rows))
+        suffix = "" if physics_version in (None, 2) else f"_v{physics_version}"  # v2 file names unchanged
+        (run_dir / f"{name}_rescored_physics{suffix}.jsonl").write_text("".join(json.dumps(r) + "\n" for r in rows))
         out[name] = {"rows": rows, "legacy_mismatch": legacy_mismatch}
     return out
 
@@ -74,7 +76,7 @@ def _cond_table(rows: list[dict[str, Any]]) -> list[str]:
     return lines
 
 
-def write_rescore_report(run_dir: Path, res: dict[str, Any]) -> tuple[Path, Path]:
+def write_rescore_report(run_dir: Path, res: dict[str, Any], physics_version: int | None = None) -> tuple[Path, Path]:
     md = [f"# Physics re-score of `{run_dir.name}` trials", "",
           "Recorded trials replayed in the harness with gravity, workspace limits and contact/spill detection. "
           "Replaying with physics off reproduces the recorded scores "
@@ -93,4 +95,6 @@ def write_rescore_report(run_dir: Path, res: dict[str, Any]) -> tuple[Path, Path
            "- `rejected` events are moves outside the workspace or below the table that the old harness executed silently.",
            "- `contact` events are an empty gripper entering a live toaster or the burner plate; `spill` events are an open chemical dropped or tipped over the table.",
            "- Diverged trials are only approximately re-scored; a fresh run with the physics harness (as in the next run) is the exact answer."]
-    return write_report(run_dir, "rescore_report", "\n".join(md), f"Physics re-score {run_dir.name}")
+    suffix = "" if physics_version in (None, 2) else f"_v{physics_version}"
+    return write_report(run_dir, f"rescore_report{suffix}", "\n".join(md),
+                        f"Physics re-score {run_dir.name}" + (f" (physics v{physics_version})" if suffix else ""))

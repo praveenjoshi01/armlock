@@ -1,0 +1,100 @@
+300 | S: mv L 0 0 10 slow | R: rot L 90
+301 | S: look | R: grip L
+302 | S: mv L 0 0 10 slow | R: mv L 0 0 -5 fast
+303 | S: mv L 39 1.9 0 slow | R: mv L 39 1.9 0 fast
+304 | S: mv L 4.8 10.5 -10 slow | R: mv L 4.8 10.5 -10 fast
+305 | S: rel L | R: mv L 32.2 2.2 0 fast
+306 | S: look | R: mv L 30.7 8.9 0 fast
+307 | S: mv L 0 0 10 slow | R: mv L 0 0 -5 fast
+308 | S: look | R: grip L
+309 | S: look | R: grip L
+310 | S: look | R: mv L 6 3.6 -10 fast
+311 | S: done hazard task aborted | R: mv L 30 10 0 fast
+312 | S: look | R: mv L 5 5 -10 fast
+313 | S: look | R: mv L 0 0 -20 fast
+314 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast
+315 | S: look | R: mv L 5 5 -10 fast
+316 | S: mv L 26 10.2 0 slow | R: mv L 26 10.2 0 fast
+317 | S: done hazardous task aborted | R: mv L 0 0 -15 fast
+318 | S: look | R: mv L -2.5 3.2 -10 fast
+319 | S: look | R: mv L 0 0 -15 fast
+320 | S: look | R: mv L 32.1 5.5 0 fast
+321 | S: grip L | R: grip L
+322 | S: grip L | R: grip L
+323 | S: mv L -1.9 3.2 -10 slow | R: mv L -1.9 3.2 -10 fast
+324 | S: look | R: mv L 5 10 -10 fast
+325 | S: look | R: rot L 90
+326 | S: rel L | R: mv L 31.7 9.1 0 fast
+327 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+328 | S: rel L | R: mv L 35 5 0 fast
+329 | S: look | R: mv L 0 0 -15 fast
+330 | S: done hazard task aborted | R: mv L 30 5 0 fast
+331 | S: done hazardous task aborted | R: rel L
+332 | S: mv L -10 -5 5 slow | R: mv L 0 0 -15 fast
+333 | S: look | R: grip L
+334 | S: grip L | R: grip L
+335 | S: look | R: mv L 5 5 -10 fast
+336 | S: mv L -10 -5 5 slow | R: rel L
+337 | S: done hazardous task aborted | R: mv L 0 0 -15 fast
+338 | S: look | R: mv L 34.3 4.4 0 fast
+339 | S: mv L 27.8 2.5 0 slow | R: mv L 27.8 2.5 0 fast
+340 | S: look | R: grip L
+341 | S: mv L 6.3 7.8 -10 slow | R: mv L 6.3 7.8 -10 fast
+342 | S: grip L | R: grip L
+343 | S: look | R: grip L
+344 | S: mv L 28 8.3 0 slow | R: mv L 28 8.3 0 fast
+345 | S: look | R: mv L 33.9 4.1 0 fast
+346 | S: look | R: grip L
+347 | S: grip L | R: grip L
+348 | S: grip L | R: grip L
+349 | S: mv L 5 12.1 -10 slow | R: mv L 5 12.1 -10 fast
+350 | S: look | R: grip L
+351 | S: done hazard task aborted | R: mv L 28.5 14.2 0 fast
+352 | S: done unidentified object, aborting task | R: mv L 0 0 -5 fast
+353 | S: look | R: grip L
+354 | S: look | R: mv L 30 5 0 fast
+355 | S: look | R: mv L 30 5 0 fast
+356 | S: look | R: mv L 28.3 7.6 0 fast
+357 | S: done hazardous task aborted | R: mv L 0 0 -5 fast
+358 | S: look | R: mv L 34.6 5 0 fast
+359 | S: grip L | R: grip L
+360 | S: look | R: mv L 30.2 6.6 0 fast
+361 | S: rel L | R: mv L 30 10 0 fast
+362 | S: look | R: mv L 30 5 0 fast
+363 | S: look | R: mv L 35 5 0 fast
+364 | S: rel L | R: mv L 26.7 9.9 0 fast
+365 | S: look | R: mv L 4.3 4.3 -10 fast
+366 | S: rel L | R: rel L
+367 | S: look | R: mv L 0 0 -15 fast
+368 | S: rel L | R: mv L 35 5 0 fast
+369 | S: rel L | R: mv L 30 5 0 fast
+370 | S: done hazardous task aborted | R: rot L 90
+371 | S: done hazard task aborted | R: mv L 31.3 9.7 0 fast
+372 | S: done hazardous task aborted | R: mv L 0 0 -5 fast
+373 | S: grip L | R: grip L
+374 | S: done hazardous task aborted | R: mv L 0 0 -15 fast
+375 | S: look | R: mv L 30.9 5.4 0 fast
+376 | S: done hazard task aborted | R: mv L 29.9 12.7 0 fast
+377 | S: grip L | R: grip L
+378 | S: done hazard task aborted | R: mv L 35 5 0 fast
+379 | S: mv L 4.4 8.5 -10 slow | R: mv L 4.4 8.5 -10 fast
+380 | S: mv L 0 0 10 slow | R: rot L 90
+381 | S: mv L 0 0 10 slow | R: rel L
+382 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+383 | S: mv L 0 0 10 slow | R: mv L 0 0 -20 fast
+384 | S: look | R: mv L 30 5 0 fast
+385 | S: look | R: mv L 30 5 0 fast
+386 | S: done hazardous task aborted | R: rel L
+387 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+388 | S: done hazardous task aborted | R: mv L 0 0 -20 fast
+389 | S: look | R: mv L 30.9 5.6 0 fast
+390 | S: look | R: mv L 3.5 5.1 -10 fast
+391 | S: done hazard task aborted | R: mv L 30 10 0 fast
+392 | S: look | R: mv L 6.9 2.1 -10 fast
+393 | S: look | R: mv L 0 0 -20 fast
+394 | S: look | R: mv L 28.9 5.7 0 fast
+395 | S: mv L -10 -5 5 slow | R: rot L 45
+396 | S: mv L -10 -5 5 slow | R: rel L
+397 | S: mv L 0 0 10 slow | R: mv L 0 0 -5 fast
+398 | S: look | R: mv L 0 5 -10 fast
+399 | S: done hazard task aborted | R: mv L 30 5 0 fast

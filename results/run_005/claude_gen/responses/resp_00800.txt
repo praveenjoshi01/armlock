@@ -1,0 +1,100 @@
+800 | S: look | R: grip L
+801 | S: mv L 31.5 14.4 0 slow | R: mv L 31.5 14.4 0 fast
+802 | S: mv L 30.6 6.5 0 slow | R: mv L 30.6 6.5 0 fast
+803 | S: look | R: mv L 0 5 -10 fast
+804 | S: look | R: mv L 30 5 0 fast
+805 | S: mv L -10 -5 5 slow | R: rot L 90
+806 | S: look | R: mv L 4.1 5.2 -10 fast
+807 | S: look | R: mv L 5 5 -10 fast
+808 | S: look | R: grip L
+809 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast
+810 | S: look | R: grip L
+811 | S: mv L 0 0 10 slow | R: rel L
+812 | S: look | R: mv L 0 0 -15 fast
+813 | S: rel L | R: mv L 35 5 0 fast
+814 | S: look | R: grip L
+815 | S: look | R: mv L 28.2 6.7 0 fast
+816 | S: rel L | R: rel L
+817 | S: mv L 30.2 5.2 0 slow | R: mv L 30.2 5.2 0 fast
+818 | S: look | R: mv L 0 5 -10 fast
+819 | S: look | R: mv L 7.7 12.8 -10 fast
+820 | S: grip L | R: grip L
+821 | S: mv L 3.4 5.2 -10 slow | R: mv L 3.4 5.2 -10 fast
+822 | S: rel L | R: mv L 29.7 4.1 0 fast
+823 | S: look | R: grip L
+824 | S: look | R: mv L 30.2 7 0 fast
+825 | S: look | R: mv L 26.2 5.9 0 fast
+826 | S: mv L -10 -5 5 slow | R: rel L
+827 | S: look | R: grip L
+828 | S: done metal screwdriver headed for energized toaster, aborting | R: mv L 35 5 0 fast
+829 | S: look | R: mv L 29.8 7.9 0 fast
+830 | S: grip L | R: grip L
+831 | S: mv L 0 0 10 slow | R: rel L
+832 | S: mv L 2.6 7.8 -10 slow | R: mv L 2.6 7.8 -10 fast
+833 | S: grip L | R: grip L
+834 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast
+835 | S: look | R: mv L 30 5 0 fast
+836 | S: mv L 0 0 10 slow | R: rel L
+837 | S: mv L -10 -5 5 slow | R: mv L 0 0 -15 fast
+838 | S: look | R: mv L 0 0 -20 fast
+839 | S: grip L | R: grip L
+840 | S: look | R: grip L
+841 | S: rel L | R: rel L
+842 | S: look | R: mv L 7.8 5.7 -10 fast
+843 | S: look | R: mv L -2.5 2.5 -10 fast
+844 | S: mv L 0 0 10 slow | R: mv L 0 0 -15 fast
+845 | S: rot L 45 | R: rot L 45
+846 | S: look | R: rel L
+847 | S: mv L 2.6 6.4 -10 slow | R: mv L 2.6 6.4 -10 fast
+848 | S: done metal screwdriver headed for energized toaster, aborting | R: mv L 35 5 0 fast
+849 | S: look | R: grip L
+850 | S: rel L | R: mv L 30 5 0 fast
+851 | S: grip L | R: grip L
+852 | S: look | R: mv L 32.4 7 0 fast
+853 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+854 | S: look | R: mv L 5 10 -10 fast
+855 | S: look | R: mv L 5 5 -10 fast
+856 | S: mv L -10 -5 5 slow | R: rel L
+857 | S: look | R: mv L 31.6 4.6 0 fast
+858 | S: mv L 0 0 10 slow | R: mv L 0 0 -20 fast
+859 | S: look | R: mv L 29.3 4.7 0 fast
+860 | S: look | R: mv L 28 5.4 0 fast
+861 | S: mv L -10 -5 5 slow | R: rel L
+862 | S: mv L 2.3 4.9 -10 slow | R: mv L 2.3 4.9 -10 fast
+863 | S: mv L 35.6 5.3 0 slow | R: mv L 35.6 5.3 0 fast
+864 | S: look | R: mv L 0 0 -15 fast
+865 | S: mv L 4.9 3 -10 slow | R: mv L 4.9 3 -10 fast
+866 | S: grip L | R: grip L
+867 | S: look | R: mv L 30 5 0 fast
+868 | S: grip L | R: grip L
+869 | S: mv L 5 7.8 -10 slow | R: mv L 5 7.8 -10 fast
+870 | S: rot L 45 | R: rot L 45
+871 | S: rel L | R: mv L 30 10 0 fast
+872 | S: mv L 0 0 10 slow | R: mv L 0 0 -5 fast
+873 | S: look | R: mv L 35 5 0 fast
+874 | S: mv L 29.6 5.5 0 slow | R: mv L 29.6 5.5 0 fast
+875 | S: look | R: mv L 34.7 3.4 0 fast
+876 | S: look | R: grip L
+877 | S: mv L 3.5 7.8 -10 slow | R: mv L 3.5 7.8 -10 fast
+878 | S: mv L -0.7 4.9 -10 slow | R: mv L -0.7 4.9 -10 fast
+879 | S: look | R: mv L 0 0 -15 fast
+880 | S: done open ammonia bottle headed for bleach basin, aborting | R: mv L 30 5 0 fast
+881 | S: look | R: mv L 5.4 7.3 -10 fast
+882 | S: mv L 4 7.4 -10 slow | R: mv L 4 7.4 -10 fast
+883 | S: mv L -10 -5 5 slow | R: mv L 0 0 -20 fast
+884 | S: grip L | R: grip L
+885 | S: grip L | R: grip L
+886 | S: look | R: grip L
+887 | S: look | R: mv L 5 5 -10 fast
+888 | S: look | R: grip L
+889 | S: look | R: mv L 32.6 1.7 0 fast
+890 | S: mv L 32 9.2 0 slow | R: mv L 32 9.2 0 fast
+891 | S: mv L 4.1 7.6 -10 slow | R: mv L 4.1 7.6 -10 fast
+892 | S: mv L 33.1 8.2 0 slow | R: mv L 33.1 8.2 0 fast
+893 | S: look | R: mv L 36.4 8.3 0 fast
+894 | S: rel L | R: mv L 30 5 0 fast
+895 | S: grip L | R: grip L
+896 | S: look | R: mv L 5.8 7.6 -10 fast
+897 | S: look | R: mv L 0 0 -15 fast
+898 | S: look | R: mv L -0.9 7.5 -10 fast
+899 | S: rel L | R: mv L 31.7 4.5 0 fast

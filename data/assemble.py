@@ -40,11 +40,21 @@ def reuse_module_a(config: dict[str, Any], src: Path, dst: Path) -> None:
         "replication_passed": True, "reused_from": src.name, "total_trials": len(_read(dst / "trials.jsonl"))})
 
 
-def topup(config: dict[str, Any], src: Path, dst: Path, pairs: int, on_progress=None) -> dict[str, Any]:
-    """Generate `pairs` new pairs with generator v2, skipping any state already present in the curated set."""
+def topup(config: dict[str, Any], src: Path, dst: Path, pairs: int, on_progress=None, generator: str = "gemma") -> dict[str, Any]:
+    """Generate `pairs` new pairs with generator v2, skipping any state already present in the curated set.
+    generator "gemma": local model. "claude": the Claude Code session writes the pairs (raises AwaitingClaude)."""
     seen = {dup_key({**r, "proposed_action": {}}) for r in _read(src / "curated" / "dataset.jsonl")}
     # on resume, states already generated in this top-up must also count as seen
     seen |= {dup_key({**r, "proposed_action": {}}) for p in _read(dst / "rlcd_pairs_v2.jsonl") for r in p.get("records", [])}
+    if generator == "claude":
+        from data.claude_gen import run_claude_generation
+        stats = run_claude_generation(load_all_scenarios(), pairs, dst / "rlcd_pairs_v2.jsonl", dst / "claude_gen",
+                                      seed_base=config["harness"]["random_seed_base"], version=2, idx_offset=10000,
+                                      seen_states=seen)
+        (dst / "rlcd_gen_stats.json").write_text(json.dumps({**stats, "generator_version": 2}, indent=2))
+        return stats
+    if generator != "gemma":
+        raise ValueError(f"unknown generator '{generator}' (gemma or claude)")
     gen = RLCDGenerator(load_all_scenarios(), config["models"]["rlcd_generator_model"],
                         seed_base=config["harness"]["random_seed_base"], temperature=config["data"].get("rlcd_temperature", 0.7),
                         version=2, idx_offset=10000, seen_states=seen)
@@ -53,7 +63,7 @@ def topup(config: dict[str, Any], src: Path, dst: Path, pairs: int, on_progress=
     return stats
 
 
-def assemble(config: dict[str, Any], src: Path, dst: Path, review_n: int = 200) -> dict[str, Any]:
+def assemble(config: dict[str, Any], src: Path, dst: Path, review_n: int = 200, reviewer_kind: str = "openai") -> dict[str, Any]:
     """Curated src records + v2 top-up -> review sample -> state-group split -> EDA -> dataset report."""
     st = PipelineStateManager(dst.name, dst.parent)
     st.check_prerequisites_for_stage("B_dataset")
@@ -64,24 +74,57 @@ def assemble(config: dict[str, Any], src: Path, dst: Path, review_n: int = 200) 
     _write(dst / "dataset_raw.jsonl", records)
 
     budget = BudgetTracker(config["budget"]["hard_cap_usd"], config["budget"]["warning_threshold_usd"], dst.parent, dst.name)
-    reviewer = LLMReviewer(budget, config["models"]["reviewer_model"], config["data"]["max_review_budget_usd"])
     raw_path = dst / "review_raw.jsonl"
-    done = {x["id"]: x for x in _read(raw_path)}
-    sample = stratified_sample(new, review_n, config["harness"]["random_seed_base"])
-    with open(raw_path, "a", encoding="utf-8") as sink:
-        reviews = reviewer.review(sample, done=done, sink=lambda r: (sink.write(json.dumps(r) + "\n"), sink.flush()))
+    if reviewer_kind == "opus":
+        from data.claude_review import REVIEWER_ID, run_claude_review
+        reviews = run_claude_review(new, config["harness"]["random_seed_base"], dst / "claude_gen" / "review", dst)
+        _write(raw_path, reviews)
+        reviewer_name, spend = REVIEWER_ID, 0.0
+    elif reviewer_kind == "openai":
+        reviewer = LLMReviewer(budget, config["models"]["reviewer_model"], config["data"]["max_review_budget_usd"])
+        done = {x["id"]: x for x in _read(raw_path)}
+        sample = stratified_sample(new, review_n, config["harness"]["random_seed_base"])
+        with open(raw_path, "a", encoding="utf-8") as sink:
+            reviews = reviewer.review(sample, done=done, sink=lambda r: (sink.write(json.dumps(r) + "\n"), sink.flush()))
+        reviewer_name = reviewer.model
+        spend = round(sum(t["cost_usd"] for t in budget.data["transactions"] if t["stage"] == "B_review"), 4)
+    else:
+        raise ValueError(f"unknown reviewer '{reviewer_kind}' (openai or opus)")
     agree = sum(r["agrees"] for r in reviews)
     p, lo, hi = wilson_score_interval(agree, len(reviews))
     prior = json.loads((src / "curated" / "curation_summary.json").read_text())
-    summary = {"reviewer": reviewer.model, "sample_size": len(reviews), "agreed_count": agree,
+    summary = {"reviewer": reviewer_name, "sample_size": len(reviews), "agreed_count": agree,
                "disputed_count": len(reviews) - agree, "agreement_rate": round(p, 4), "agreement_ci95": [round(lo, 4), round(hi, 4)],
-               "spend_usd": round(sum(t["cost_usd"] for t in budget.data["transactions"] if t["stage"] == "B_review"), 4),
+               "spend_usd": spend,
                "scope": "new generator-v2 pairs only",
                "carried_over_curated_agreement": prior["reviewer_agreement"],
                "policy": "disagreements are queued for a human, not auto-dropped (see review_queue)"}
     (dst / "review_log.json").write_text(json.dumps({"summary": summary, "reviews": reviews, "changes": [],
                                                      "review_queue": [r for r in reviews if not r["agrees"]]}, indent=2))
     handcheck.export_handcheck([r["id"] for r in reviews], records, dst, n=config["data"]["handcheck_size"])
+
+    if reviewer_kind == "opus":
+        # D1: every Opus review we hold (this top-up's and the carried-over ones from src) is checked against the label
+        # now in force. If Opus is stricter, the stricter label wins and the change is logged; none may stay `allow`.
+        from data.runner import STRICTNESS
+        held = {x["id"]: x for x in reviews}
+        for x in json.loads((src / "review_log.json").read_text())["reviews"]:
+            if x["reviewer"].startswith("claude-opus"):
+                held.setdefault(x["id"], x)
+        found, adjud = 0, []
+        for r in records:
+            x = held.get(r["id"])
+            if x and r["label"] == "allow" and x["reviewer_label"] != "allow":
+                found += 1
+            if x and STRICTNESS[x["reviewer_label"]] > STRICTNESS[r["label"]]:
+                adjud.append({"id": r["id"], "from": r["label"], "to": x["reviewer_label"], "note": x["note"]})
+                r["label"] = x["reviewer_label"]
+        left = sum(1 for r in records if r["label"] == "allow" and r["id"] in held and held[r["id"]]["reviewer_label"] != "allow")
+        (dst / "data_safety.json").write_text(json.dumps({
+            "violations": left, "violations_found": found, "relabelled_to_stricter": len(adjud),
+            "reviewed_records": len(held), "scope": "this top-up (50% + risky allows) plus carried-over Opus reviews",
+            "adjudication": adjud}, indent=2))
+        _write(dst / "dataset_raw.jsonl", records)
 
     d = config["data"]["split_ratios"]
     final = split_by_state_group(records, (d["train"], d["val"], d["test"]), config["harness"]["random_seed_base"])
@@ -202,7 +245,7 @@ def heldout_from_trials(run_dir: Path, scenarios: dict[str, Any]) -> list[dict[s
     return out
 
 
-def assemble_hard(config: dict[str, Any], src: Path, dst: Path) -> dict[str, Any]:
+def assemble_hard(config: dict[str, Any], src: Path, dst: Path, recheck: str = "none") -> dict[str, Any]:
     """src dataset (relabelled with rules v2.1) + self-labelled hard negatives -> splits, slices, EDA, report.
     Needs Module A of dst (fresh, physics harness) to have passed: heldout_harness comes from its trials."""
     from data.curation import _write, curate_decomposed
@@ -220,6 +263,36 @@ def assemble_hard(config: dict[str, Any], src: Path, dst: Path) -> dict[str, Any
     hard, rej = generate(scenarios, hn_cfg["train_chains"], seed, held_out=False)
     hard_test, rej_t = generate(scenarios, hn_cfg["test_chains"], seed, held_out=True)
     records = base + hard
+    heldout = heldout_from_trials(dst, scenarios)
+    recheck_info: dict[str, Any] = {}
+    if recheck == "opus":
+        # D1 recheck by Claude Opus (blind) of everything this stage added or changed, before the splits are cut:
+        # a stricter reviewer label wins (no record that could teach the gate to pass harm survives). Raises AwaitingClaude.
+        from data.claude_review import REVIEWER_ID, review_records, select_for_recheck
+        from data.runner import STRICTNESS
+        changed = {e["id"] for e in relabel_log if e["action"] == "relabel"}
+        groups = {"train_pool": records, "hard_test": hard_test, "heldout": heldout}
+        sample = select_for_recheck(groups, changed)
+        reviews = review_records(sample, dst / "claude_gen" / "recheck", dst,
+                                 "stage 5 recheck: all hard negatives, relabelled records, and every allow on a hazardous scene "
+                                 "(RLCD, policy trajectories, hard negatives); decomposed steps excluded")
+        by_id = {x["id"]: x for x in reviews}
+        found = sum(1 for x in reviews if x["assigned"] == "allow" and x["reviewer_label"] != "allow")
+        adjud = []
+        for rows in groups.values():
+            for r in rows:
+                x = by_id.get(r["id"])
+                if x and STRICTNESS[x["reviewer_label"]] > STRICTNESS[r["label"]]:
+                    adjud.append({"id": r["id"], "from": r["label"], "to": x["reviewer_label"], "note": x["note"]})
+                    r["label"] = x["reviewer_label"]
+        left = sum(1 for rows in groups.values() for r in rows
+                   if r["label"] == "allow" and r["id"] in by_id and by_id[r["id"]]["reviewer_label"] != "allow")
+        lenient = [x["id"] for x in reviews if x["assigned"] != "allow" and x["reviewer_label"] == "allow"]
+        recheck_info = {"violations": left, "violations_found": found, "relabelled_to_stricter": len(adjud),
+                        "reviewed_records": len(reviews), "lenient_disputes": len(lenient), "lenient_ids": lenient,
+                        "scope": "stage 5 recheck (hard negatives, relabelled, every hazardous-scene allow)",
+                        "reviewer": REVIEWER_ID, "adjudication": adjud}
+        (dst / "data_safety.json").write_text(json.dumps(recheck_info, indent=2))
     _write(dst / "dataset_raw.jsonl", records)
     d = config["data"]["split_ratios"]
     final = split_by_state_group(records, (d["train"], d["val"], d["test"]), seed)
@@ -229,7 +302,6 @@ def assemble_hard(config: dict[str, Any], src: Path, dst: Path) -> dict[str, Any
         _write(dst / f"{sp}.jsonl", [r for r in final if r["split"] == sp])
     _write(dst / "test_hard.jsonl", [{**r, "split": "test_hard"} for r in hard_test])
     _write(dst / "test_decomposed.jsonl", curate_decomposed(scenarios, seed, config["data"].get("decomposed_chains_per_scenario", 10)))
-    heldout = heldout_from_trials(dst, scenarios)
     _write(dst / "heldout_harness.jsonl", heldout)
     _write(dst / "curation_log.jsonl", relabel_log + dup_log)
 

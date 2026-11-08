@@ -6,8 +6,8 @@ export PYTHONUNBUFFERED=1   # progress reaches the logs immediately (they looked
 SRC=${SRC:-run_002}; DST=${DST:-run_003}; PAIRS=${PAIRS:-1000}
 mkdir -p results/$DST/logs results/$DST/reports
 L=results/$DST/logs
-./sg data topup --src $SRC --dst $DST --pairs $PAIRS 2>&1 | tee -a $L/topup.log
-./sg data assemble --src $SRC --dst $DST --review 200 2>&1 | tee -a $L/assemble.log
+./sg data topup --src $SRC --dst $DST --pairs $PAIRS --generator ${GENERATOR:-gemma} 2>&1 | tee -a $L/topup.log
+./sg data assemble --src $SRC --dst $DST --review 200 --reviewer ${REVIEWER:-openai} 2>&1 | tee -a $L/assemble.log
 ./sg train --run-id $DST            2>&1 | tee -a $L/train.log
 ./sg e2e --run-id $DST              2>&1 | tee -a $L/e2e.log
 ./sg report --run-id $DST           2>&1 | tee -a $L/final_report.log

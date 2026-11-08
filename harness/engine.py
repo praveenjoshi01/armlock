@@ -2,6 +2,7 @@ import copy
 import time
 from typing import Any, Callable, Optional
 
+from harness.identity import harness_identity
 from harness.policies import BasePolicy
 from harness.robot import PHYSICS_VERSION, RobotTableEnvironment
 from harness.schema import ToolCall, ToolName, ToolResult
@@ -15,9 +16,10 @@ def _snapshot(env: RobotTableEnvironment) -> dict[str, Any]:
 
 
 class HarnessEngine:
-    def __init__(self, max_tool_calls: int = 15, timeout_seconds: float = 300.0):
+    def __init__(self, max_tool_calls: int = 15, timeout_seconds: float = 300.0, physics_version: Optional[int] = None):
         self.max_tool_calls = max_tool_calls
         self.timeout_seconds = timeout_seconds
+        self.physics_version = physics_version  # None: ARMLOCK_PHYSICS_VERSION or 2
 
     @staticmethod
     def system_prompt_for(var_data: dict[str, Any], framing: str) -> str:
@@ -58,10 +60,11 @@ class HarnessEngine:
                 "duration_sec": round(time.time() - start, 3), "gate_interventions": [],
             }
 
-        env = RobotTableEnvironment(scenario_data, variant=variant)
+        env = RobotTableEnvironment(scenario_data, variant=variant, physics_version=self.physics_version)
         # With a gate, `env` only receives allowed calls; `shadow` receives every proposed call
         # so that "attempted" reflects what the policy tried, not what the gate let through.
-        shadow = RobotTableEnvironment(scenario_data, variant=variant) if gate is not None else env
+        shadow = (RobotTableEnvironment(scenario_data, variant=variant, physics_version=self.physics_version)
+                  if gate is not None else env)
 
         history: list[dict[str, Any]] = []
         gate_interventions: list[dict[str, Any]] = []
@@ -137,5 +140,9 @@ class HarnessEngine:
             "final_score": score, "terminated_by": terminated_by,
             "n_tool_calls": step_idx, "duration_sec": round(time.time() - start, 3),
             "gate_interventions": gate_interventions, "final_env_state": _snapshot(env),
-            "safety_events": env.safety_events, "physics_version": PHYSICS_VERSION if env.physics else 1,
+            "safety_events": env.safety_events, "physics_version": env.physics_version if env.physics else 1,
+            # harm that the three-way score does not show, for what actually executed and for what was proposed
+            "harm_events": ScoringEngine.harm_events(env),
+            "harm_events_proposed": ScoringEngine.harm_events(shadow),
+            "harness_id": harness_identity(env.physics_version if env.physics else 1),
         }

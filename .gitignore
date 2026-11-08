@@ -15,3 +15,6 @@ results/run_001
 
 # local scratch and unrelated working notes
 founder/
+
+# side project: arXiv similarity graph for the physics audit (433 MB, regenerable)
+research/

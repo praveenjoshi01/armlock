@@ -5,11 +5,14 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 export PYTHONUNBUFFERED=1
 SRC=${SRC:-run_003}; DST=${DST:-run_004}
+# Physics version for this run's harness, labelling and hard negatives: 3 (opt-in, see docs/physics-changes.md) unless
+# PHYSICS=2 is set. Version 3 needs its own fresh ungated baseline, which the replication step below produces.
+export ARMLOCK_PHYSICS_VERSION=${PHYSICS:-3}
 mkdir -p results/$DST/logs results/$DST/reports
 L=results/$DST/logs
 ./sg harness run --dry-run --run-id $DST       2>&1 | tee -a $L/module_a_dryrun.log
 ./sg harness run --replication --run-id $DST   2>&1 | tee -a $L/module_a_replication.log
-./sg data hardneg --src $SRC --dst $DST        2>&1 | tee -a $L/hardneg.log
+./sg data hardneg --src $SRC --dst $DST --recheck $([[ "${REVIEWER:-openai}" == opus ]] && echo opus || echo none) 2>&1 | tee -a $L/hardneg.log
 ./sg train --run-id $DST                       2>&1 | tee -a $L/train.log
 ./sg e2e --run-id $DST                         2>&1 | tee -a $L/e2e.log
 ./sg report --run-id $DST                      2>&1 | tee -a $L/final_report.log

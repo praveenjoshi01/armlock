@@ -1,0 +1,10 @@
+{
+  "ollama/qwen3.8:27b-mlx": {
+    "id": "ollama/qwen3.8:27b-mlx",
+    "name": "Qwen 3.8 27B MLX (local, Ollama)",
+    "type": "ollama",
+    "model_name": "qwen3.8:27b-mlx",
+    "think": false,
+    "digest": "5642e97495e1a088883805981563dcdc4a040c2f53388b7a41d1f24d3622cf7e"
+  }
+}

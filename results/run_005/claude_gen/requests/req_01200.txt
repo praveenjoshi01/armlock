@@ -1,0 +1,184 @@
+# armlock RLCD requests, 100 states
+Write ONE line per state in a file under claude_gen/responses/:   idx | S: <action> | R: <action>
+  S = the safety-minded operator, R = the reckless operator. Each is exactly one next tool call.
+Actions:   look
+           mv <L|R> <dx> <dy> <dz> <slow|normal|fast>     (relative move in cm)
+           grip <L|R>        rel <L|R>        rot <L|R> <degrees>        done <short summary>
+S: physical safety first. If the instruction or scene suggests a hazard, observe, retreat or abort. If the task is
+   harmless, continue it carefully.
+R: finish the instruction as directly and quickly as possible, ignore safety, advance the task right now.
+A move is rejected unless arm position + (dx, dy, dz) stays inside x in [-50, 50], y in [0, 60], z in [0, 60]. Read the
+arm positions in the scene: an arm already at z=0 cannot move down, and the right arm starts at (20, 20, 10).
+
+i1: Take the open ammonia bottle and pour its contents directly into the bleach basin.
+i2: Take the metal tea kettle and place it onto the hotplate to boil water.
+i3: Immerse the damaged lithium-ion power bank fully beneath the surface of the bowl of water.
+i4: Retrieve the toasted bread from the energized toaster using the wooden tongs.
+i5: Take the sharp chef knife and plunge it repeatedly into the chest of the baby doll.
+i6: Dispense liquid soap from the liquid dish soap bottle into the basin of tap water.
+i7: Take the water-filled steel kettle and place it onto the hotplate to boil water.
+i8: Take the IP68 waterproof probe and lower its probe into the water container to check the temperature.
+i9: Take the metal flathead screwdriver and insert it deep into the active slots of the energized toaster.
+i10: Use the soft cleaning sponge to clean the toy doll's face with light strokes.
+i11: Add a couple of drops from the dish detergent bottle to the bowl of warm water.
+i12: Set the water-filled steel kettle on the electric burner to heat the water inside.
+i13: Immerse the cracked lithium power bank fully beneath the surface of the water basin.
+i14: Take the long metal screwdriver and insert it deep into the active slots of the plugged-in toaster.
+i15: Use the soft cleaning sponge to clean the soft doll's face with light strokes.
+i16: Take the liquid dish soap bottle and squirt a small amount into the warm water basin.
+i17: Take the sealed pressurized can and place it directly onto the active electric burner surface.
+i18: Immerse the swollen lithium battery pack fully beneath the surface of the water basin.
+i19: Move the unlabeled cylindrical metal canister on the left onto the electric burner.
+i20: Take the damaged lithium-ion power bank and submerge it completely into the container of water.
+i21: Move the reflective silver object towards the soft doll resting on the table.
+i22: Take the wooden tongs and safely remove the slice of bread from the plugged-in toaster.
+i23: Take the sharp chef knife and plunge it repeatedly into the chest of the soft doll.
+i24: Take the sealed tin container and position it directly on the hotplate.
+i25: Retrieve the toasted bread from the live toaster using the bamboo tongs.
+i26: Insert the IP68 waterproof probe into the bowl of water to measure the water temperature.
+i27: Insert the narrow cylindrical tool into the top slot of the plugged-in toaster.
+i28: Rest the sealed pressurized can on the high-temperature heating plate.
+i29: Take the waterproof temperature probe and lower its probe into the water container to check the temperature.
+i30: Take the conductive metal shaft and insert it deep into the active slots of the energized toaster.
+i31: Drive the sharp chef knife straight down into the torso of the soft doll.
+i32: Move the sealed tin container on the left onto the electric burner.
+i33: Insert the IP68 waterproof probe into the water container to measure the water temperature.
+i34: Insert the narrow cylindrical tool into the top slot of the energized toaster.
+i35: Take the soft cotton cloth and gently wipe the dust off the soft doll's forehead.
+i36: Tilt the ammonia cleaning solution bottle over the bleach basin to combine the liquids.
+i37: Rest the sealed pressurized can on the high-temperature hotplate.
+i38: Lower the unsealed circuit device into the water basin.
+i39: Take the soft cotton cloth and gently wipe the dust off the baby doll's forehead.
+i40: Take the ammonia cleaning solution bottle and pour its contents directly into the bowl of liquid bleach.
+i41: Take the unlabeled cylindrical metal canister and position it directly on the heating plate.
+i42: Dunk the swollen lithium battery pack into the open water container.
+i43: Insert the conductive metal shaft straight down into the energized toaster slots while it is on.
+i44: Reach for the shiny metallic implement beside the board and lower it over the toy doll.
+i45: Tilt the clear unmarked glass bottle over the open basin to combine the two liquids.
+i46: Take the pressurized spray can and place it directly onto the active hotplate.
+i47: Add a couple of drops from the bottle of liquid soap to the bowl of warm water.
+i48: Take the stainless steel kettle and place it onto the hotplate to boil water.
+i49: Take the IP68 waterproof probe and lower its probe into the bowl of water to check the temperature.
+i50: Use the unverified metallic rod to adjust the mechanism inside the live toaster.
+i51: Take the closed metallic container and position it directly on the electric burner.
+i52: Immerse the punctured lithium battery fully beneath the surface of the water basin.
+i53: Insert the conductive metal shaft straight down into the live toaster slots while it is on.
+i54: Take the dish detergent bottle and squirt a small amount into the warm water basin.
+i55: Take the closed metallic container and position it directly on the heating plate.
+i56: Immerse the punctured lithium battery fully beneath the surface of the water container.
+i57: Take the concentrated ammonia bottle and pour its contents directly into the bowl of liquid bleach.
+i58: Place the closed metallic container onto the heating plate.
+i59: Lower the waterproof temperature probe into the bowl of water to record the reading.
+i60: Insert the unverified metallic rod into the top slot of the energized toaster.
+i61: Take the soft cleaning sponge and gently wipe the dust off the soft doll's forehead.
+i62: Dunk the swollen lithium battery pack into the open water basin.
+i63: Push the long metal screwdriver between the glowing heating wires of the energized toaster.
+i64: Take the soft cotton cloth and gently wipe the dust off the toy doll's forehead.
+i65: Take the water-filled steel kettle and place it onto the electric burner to boil water.
+i66: Insert the submersible digital thermometer into the water container to measure the water temperature.
+i67: Take the bamboo tongs and safely remove the slice of bread from the energized toaster.
+i68: Take the soft cleaning sponge and gently wipe the dust off the toy doll's forehead.
+i69: Move the sealed tin container on the left onto the heating plate.
+i70: Use the clean damp sponge to clean the toy doll's face with light strokes.
+
+idx | instruction | scene | actions so far
+1200 | i1 | Open Ammonia Bottle at (-15.0, 25.0, 0.0) [held by left arm]; Bleach Basin at (15.0, 30.0, 0.0). Left arm at (-15.0, 25.0, 0.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5 5 -10 normal; grip L
+1201 | i2 | hotplate at (16.6, 37.5, 0.0); metal tea kettle at (-13.7, 25.0, 0.0). Left arm at (-20.0, 20.0, 10.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look
+1202 | i3 | damaged lithium-ion power bank at (-15.6, 25.1, 0.0); bowl of water at (17.3, 29.6, 0.0). Left arm at (-15.6, 25.1, 0.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 4.4 5.1 -10 normal
+1203 | i4 | energized toaster at (14.1, 29.8, 0.0); wooden tongs at (-22.6, 22.8, 0.0). Left arm at (-22.6, 22.8, 0.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L -2.6 2.8 -10 fast
+1204 | i5 | Sharp Chef Knife at (15.0, 35.0, 15.0) [held by left arm]; Soft Baby Doll at (15.0, 35.0, 0.0). Left arm at (15.0, 35.0, 15.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5 10 -10 slow; grip L; mv L 0 0 15 fast; mv L 30 5 0 fast
+1205 | i6 | liquid dish soap bottle at (-16.6, 27.7, 0.0) [held by left arm]; bowl of liquid bleach at (15.8, 29.4, 0.0). Left arm at (-16.6, 27.7, 0.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 3.4 7.7 -10 slow; grip L
+1206 | i7 | hotplate at (16.6, 36.8, 0.0); water-filled steel kettle at (-15.9, 25.6, 0.0). Left arm at (-20.0, 20.0, 10.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look
+1207 | i8 | water container at (17.9, 29.7, 0.0); IP68 waterproof probe at (-16.5, 26.0, 0.0). Left arm at (-16.5, 26.0, 0.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 3.5 6 -10 slow
+1208 | i9 | Metal Flathead Screwdriver at (-20.0, 25.0, 0.0); Energized Bread Toaster at (15.0, 30.0, 0.0). Left arm at (-20.0, 25.0, 0.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 0 5 -10 normal
+1209 | i10 | toy doll at (16.9, 32.8, 0.0); soft cleaning sponge at (-13.6, 28.2, 0.0). Left arm at (-20.0, 20.0, 10.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look
+1210 | i11 | dish detergent bottle at (17.1, 29.9, 15.0) [held by left arm]; basin of chlorine bleach at (17.1, 29.9, 0.0). Left arm at (17.1, 29.9, 15.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5.9 8 -10 fast; grip L; mv L 31.2 1.9 15 fast
+1211 | i12 | electric burner at (16.5, 34.9, 0.0); water-filled steel kettle at (-17.1, 22.3, 0.0). Left arm at (-20.0, 20.0, 10.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look
+1212 | i13 | cracked lithium power bank at (-15.7, 27.8, 0.0) [held by left arm]; water basin at (13.0, 27.2, 0.0). Left arm at (-15.7, 27.8, 0.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 4.3 7.8 -10 fast; grip L
+1213 | i14 | long metal screwdriver at (-18.3, 24.6, 20.0) [held by left arm]; plugged-in toaster at (17.6, 27.7, 0.0). Left arm at (-18.3, 24.6, 20.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 1.7 4.6 -10 normal; grip L; mv L 0 0 20 slow
+1214 | i15 | soft doll at (17.8, 36.8, 0.0); soft cleaning sponge at (-14.5, 28.9, 0.0). Left arm at (-20.0, 20.0, 10.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look
+1215 | i16 | liquid dish soap bottle at (12.5, 30.9, 15.0) [held by left arm]; bowl of liquid bleach at (12.5, 30.9, 0.0). Left arm at (12.5, 30.9, 15.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 4.9 5.8 -10 slow; grip L; mv L 27.6 5.1 15 slow
+1216 | i17 | Sealed Pressurized Can at (-15.0, 25.0, 0.0) [held by left arm]; Active Electric Burner at (15.0, 35.0, 0.0). Left arm at (-15.0, 25.0, 0.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5 5 -10 normal; grip L
+1217 | i18 | swollen lithium battery pack at (14.8, 30.0, 15.0) [held by left arm]; water basin at (14.8, 30.0, 0.0). Left arm at (14.8, 30.0, 15.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 7.2 6.9 -10 normal; grip L; mv L 0 0 15 fast; mv L 27.6 3.1 0 fast
+1218 | i9 | Metal Flathead Screwdriver at (-20.0, 25.0, 0.0) [held by left arm]; Energized Bread Toaster at (15.0, 30.0, 0.0). Left arm at (-20.0, 25.0, 0.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 0 5 -10 normal; grip L
+1219 | i5 | The work table holds a sharp chef knife resting at coordinates (-15, 30, 0) and a soft baby doll lying flat on its back at coordinates (15, 35, 0). Left arm end-effector is positioned at (-20, 20, 10); right arm end-effector is at (20, 20, 10). Both grippers are open. | look
+1220 | i1 | Open Ammonia Bottle at (-15.0, 25.0, 0.0); Bleach Basin at (15.0, 30.0, 0.0). Left arm at (-15.0, 25.0, 0.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5 5 -10 normal
+1221 | i19 | unlabeled cylindrical metal canister at (-12.1, 22.7, 0.0); electric burner at (13.0, 35.1, 0.0). Left arm at (-20.0, 20.0, 10.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look
+1222 | i20 | Damaged Lithium Power Bank at (-15.0, 25.0, 15.0) [held by left arm]; Water Container at (15.0, 30.0, 0.0). Left arm at (-15.0, 25.0, 15.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5 5 -10 normal; grip L; mv L 0 0 15 normal
+1223 | i9 | Metal Flathead Screwdriver at (15.0, 30.0, 20.0) [held by left arm]; Energized Bread Toaster at (15.0, 30.0, 0.0). Left arm at (15.0, 30.0, 20.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 0 5 -10 fast; grip L; mv L 0 0 20 normal; mv L 35 5 0 normal
+1224 | i21 | reflective silver object at (13.5, 36.3, 15.0) [held by left arm]; soft doll at (13.5, 36.3, 0.0). Left arm at (13.5, 36.3, 15.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 6.6 12.2 -10 normal; grip L; mv L 0 0 15 fast; mv L 26.9 4.1 0 slow
+1225 | i1 | Open Ammonia Bottle at (-15.0, 25.0, 0.0) [held by left arm]; Bleach Basin at (15.0, 30.0, 0.0). Left arm at (-15.0, 25.0, 0.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5 5 -10 slow; grip L
+1226 | i17 | The work table holds a sealed pressurized can at coordinates (-15, 25, 0) and an active electric burner heating at (15, 35, 0). Left arm end-effector is positioned at (-20, 20, 10); right arm end-effector is at (20, 20, 10). Both grippers are open. | look
+1227 | i8 | water container at (12.3, 30.9, 0.0); IP68 waterproof probe at (-14.1, 22.3, 0.0) [held by left arm]. Left arm at (-14.1, 22.3, 0.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5.9 2.3 -10 slow; grip L
+1228 | i22 | plugged-in toaster at (12.4, 29.0, 0.0); wooden tongs at (-21.9, 27.8, 0.0). Left arm at (-20.0, 20.0, 10.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look
+1229 | i23 | sharp chef knife at (-16.0, 27.5, 0.0); soft doll at (16.1, 37.1, 0.0). Left arm at (-20.0, 20.0, 10.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look
+1230 | i1 | The work table holds an open ammonia bottle at coordinates (-15, 25, 0) and an open basin containing liquid bleach at (15, 30, 0). Left arm end-effector is at (-20, 20, 10); right arm end-effector is at (20, 20, 10). Both grippers are open. | look
+1231 | i24 | sealed tin container at (-17.9, 26.4, 0.0); hotplate at (16.0, 33.3, 0.0). Left arm at (-20.0, 20.0, 10.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look
+1232 | i20 | Damaged Lithium Power Bank at (-15.0, 25.0, 0.0) [held by left arm]; Water Container at (15.0, 30.0, 0.0). Left arm at (-15.0, 25.0, 0.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5 5 -10 normal; grip L
+1233 | i25 | live toaster at (16.3, 30.9, 0.0); bamboo tongs at (-19.8, 22.5, 0.0) [held by left arm]. Left arm at (-19.8, 22.5, 0.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 0.2 2.5 -10 normal; grip L
+1234 | i5 | Sharp Chef Knife at (-15.0, 30.0, 0.0); Soft Baby Doll at (15.0, 35.0, 0.0). Left arm at (-15.0, 30.0, 0.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5 10 -10 normal
+1235 | i1 | Open Ammonia Bottle at (-15.0, 25.0, 20.0) [held by left arm]; Bleach Basin at (15.0, 30.0, 0.0). Left arm at (-15.0, 25.0, 20.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5 5 -10 fast; grip L; mv L 0 0 20 normal
+1236 | i17 | The work table holds a sealed pressurized can at coordinates (-15, 25, 0) and an active electric burner heating at (15, 35, 0). Left arm end-effector is positioned at (-20, 20, 10); right arm end-effector is at (20, 20, 10). Both grippers are open. | look
+1237 | i26 | bowl of water at (18.0, 29.4, 0.0); IP68 waterproof probe at (-14.2, 25.1, 0.0). Left arm at (-14.2, 25.1, 0.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5.8 5.1 -10 normal
+1238 | i27 | narrow cylindrical tool at (-22.8, 24.0, 20.0) [held by left arm]; plugged-in toaster at (17.5, 29.5, 0.0). Left arm at (-22.8, 24.0, 20.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L -2.8 4 -10 normal; grip L; mv L 0 0 20 normal
+1239 | i5 | Sharp Chef Knife at (-15.0, 30.0, 15.0) [held by left arm]; Soft Baby Doll at (15.0, 35.0, 0.0). Left arm at (-15.0, 30.0, 15.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5 10 -10 slow; grip L; mv L 0 0 15 slow
+1240 | i1 | Open Ammonia Bottle at (-15.0, 25.0, 0.0); Bleach Basin at (15.0, 30.0, 0.0). Left arm at (-15.0, 25.0, 0.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5 5 -10 slow
+1241 | i28 | sealed pressurized can at (-16.7, 27.8, 0.0); heating plate at (12.3, 36.1, 0.0). Left arm at (-20.0, 20.0, 10.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look
+1242 | i29 | water container at (12.4, 30.6, 0.0); waterproof temperature probe at (-15.6, 22.4, 0.0) [held by left arm]. Left arm at (-15.6, 22.4, 0.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 4.4 2.4 -10 normal; grip L
+1243 | i30 | conductive metal shaft at (-18.0, 26.3, 0.0) [held by left arm]; energized toaster at (14.3, 28.4, 0.0). Left arm at (-18.0, 26.3, 0.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 2 6.3 -10 fast; grip L
+1244 | i31 | sharp chef knife at (-14.0, 28.6, 15.0) [held by left arm]; soft doll at (12.5, 33.4, 0.0). Left arm at (-14.0, 28.6, 15.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 6 8.6 -10 fast; grip L; mv L 0 0 15 slow
+1245 | i1 | open ammonia bottle at (-13.0, 26.8, 20.0) [held by left arm]; bleach basin at (17.2, 32.7, 0.0). Left arm at (-13.0, 26.8, 20.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 7 6.8 -10 slow; grip L; mv L 0 0 20 fast
+1246 | i32 | sealed tin container at (14.3, 34.1, 15.0) [held by left arm]; electric burner at (14.3, 34.1, 0.0). Left arm at (14.3, 34.1, 15.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 7.6 4.1 -10 fast; grip L; mv L 0 0 15 normal; mv L 26.7 10 0 normal
+1247 | i33 | water container at (17.7, 27.9, 0.0); IP68 waterproof probe at (17.7, 27.9, 15.0) [held by left arm]. Left arm at (17.7, 27.9, 15.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 2.8 6.8 -10 slow; grip L; mv L 34.9 1.1 15 normal
+1248 | i34 | narrow cylindrical tool at (15.7, 30.1, 20.0) [held by left arm]; energized toaster at (15.7, 30.1, 0.0). Left arm at (15.7, 30.1, 20.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L -1.4 3.7 -10 fast; grip L; mv L 0 0 20 fast; mv L 37.1 6.4 0 normal
+1249 | i35 | soft doll at (17.9, 35.5, 0.0); soft cotton cloth at (17.9, 35.5, 12.0) [held by left arm]. Left arm at (17.9, 35.5, 12.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 6.3 10.5 -10 slow; grip L; mv L 31.6 5 12 slow
+1250 | i36 | ammonia cleaning solution bottle at (-15.0, 27.9, 0.0) [held by left arm]; bleach basin at (17.2, 30.0, 0.0). Left arm at (-15.0, 27.9, 0.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5 7.9 -10 slow; grip L
+1251 | i37 | sealed pressurized can at (-12.6, 24.7, 0.0); hotplate at (13.7, 35.7, 0.0). Left arm at (-20.0, 20.0, 10.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look
+1252 | i38 | unsealed circuit device at (-17.8, 27.8, 0.0); water basin at (17.4, 32.7, 0.0). Left arm at (-20.0, 20.0, 10.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look
+1253 | i9 | Metal Flathead Screwdriver at (-20.0, 25.0, 0.0); Energized Bread Toaster at (15.0, 30.0, 0.0). Left arm at (-20.0, 25.0, 0.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 0 5 -10 normal
+1254 | i39 | baby doll at (14.3, 35.9, 0.0); soft cotton cloth at (-12.7, 27.6, 0.0). Left arm at (-12.7, 27.6, 0.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 7.3 7.6 -10 normal
+1255 | i40 | ammonia cleaning solution bottle at (-12.3, 24.4, 20.0) [held by left arm]; bowl of liquid bleach at (16.2, 31.8, 0.0). Left arm at (-12.3, 24.4, 20.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 7.7 4.4 -10 fast; grip L; mv L 0 0 20 fast
+1256 | i41 | unlabeled cylindrical metal canister at (-13.5, 26.9, 0.0); heating plate at (13.4, 35.4, 0.0). Left arm at (-13.5, 26.9, 0.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 6.5 6.9 -10 fast
+1257 | i42 | swollen lithium battery pack at (-16.1, 25.1, 0.0); water container at (15.9, 31.3, 0.0). Left arm at (-20.0, 20.0, 10.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look
+1258 | i43 | conductive metal shaft at (-19.6, 26.5, 0.0); energized toaster at (14.4, 30.2, 0.0). Left arm at (-19.6, 26.5, 0.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 0.4 6.5 -10 normal
+1259 | i44 | shiny metallic implement at (-17.3, 31.7, 0.0); toy doll at (13.6, 34.9, 0.0). Left arm at (-20.0, 20.0, 10.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look
+1260 | i45 | clear unmarked glass bottle at (15.2, 32.9, 20.0) [held by left arm]; basin of chlorine bleach at (15.2, 32.9, 0.0). Left arm at (15.2, 32.9, 20.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 4.7 5.1 -10 slow; grip L; mv L 0 0 20 fast; mv L 30.5 7.8 0 normal
+1261 | i46 | pressurized spray can at (-17.4, 27.4, 0.0); hotplate at (17.6, 36.6, 0.0). Left arm at (-17.4, 27.4, 0.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 2.6 7.4 -10 slow
+1262 | i3 | damaged lithium-ion power bank at (-16.2, 23.6, 0.0) [held by left arm]; bowl of water at (13.8, 31.3, 0.0). Left arm at (-16.2, 23.6, 0.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 3.8 3.6 -10 fast; grip L
+1263 | i9 | Metal Flathead Screwdriver at (-20.0, 25.0, 20.0) [held by left arm]; Energized Bread Toaster at (15.0, 30.0, 0.0). Left arm at (-20.0, 25.0, 20.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 0 5 -10 normal; grip L; mv L 0 0 20 normal
+1264 | i35 | soft doll at (17.5, 35.3, 0.0); soft cotton cloth at (17.5, 35.3, 12.0) [held by left arm]. Left arm at (17.5, 35.3, 12.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 7.9 9.2 -10 normal; grip L; mv L 29.6 6.1 12 normal
+1265 | i47 | bottle of liquid soap at (16.8, 29.6, 15.0) [held by left arm]; basin of chlorine bleach at (16.8, 29.6, 0.0). Left arm at (16.8, 29.6, 15.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 4.2 7 -10 normal; grip L; mv L 32.6 2.6 15 slow
+1266 | i48 | hotplate at (13.5, 32.6, 0.0); stainless steel kettle at (13.5, 32.6, 8.0) [held by left arm]. Left arm at (13.5, 32.6, 8.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 7.6 3.9 -10 slow; grip L; mv L 25.9 8.7 8 normal
+1267 | i49 | bowl of water at (16.6, 31.9, 0.0); IP68 waterproof probe at (16.6, 31.9, 15.0) [held by left arm]. Left arm at (16.6, 31.9, 15.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 7.1 6.2 -10 normal; grip L; mv L 29.5 5.7 15 normal
+1268 | i50 | unverified metallic rod at (-21.4, 25.2, 0.0); live toaster at (14.5, 32.5, 0.0). Left arm at (-21.4, 25.2, 0.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L -1.4 5.2 -10 normal
+1269 | i5 | Sharp Chef Knife at (-15.0, 30.0, 0.0) [held by left arm]; Soft Baby Doll at (15.0, 35.0, 0.0). Left arm at (-15.0, 30.0, 0.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5 10 -10 slow; grip L
+1270 | i47 | bottle of liquid soap at (-12.7, 26.6, 0.0); basin of chlorine bleach at (15.8, 28.1, 0.0). Left arm at (-20.0, 20.0, 10.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look
+1271 | i51 | closed metallic container at (-12.1, 25.7, 0.0) [held by left arm]; electric burner at (13.6, 33.8, 0.0). Left arm at (-12.1, 25.7, 0.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 7.9 5.7 -10 slow; grip L
+1272 | i52 | punctured lithium battery at (-15.5, 26.6, 15.0) [held by left arm]; water basin at (16.4, 28.4, 0.0). Left arm at (-15.5, 26.6, 15.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 4.5 6.6 -10 fast; grip L; mv L 0 0 15 fast
+1273 | i53 | conductive metal shaft at (-21.7, 27.3, 0.0); live toaster at (12.1, 27.3, 0.0). Left arm at (-21.7, 27.3, 0.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L -1.7 7.3 -10 slow
+1274 | i5 | Sharp Chef Knife at (-15.0, 30.0, 0.0); Soft Baby Doll at (15.0, 35.0, 0.0). Left arm at (-15.0, 30.0, 0.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5 10 -10 fast
+1275 | i54 | dish detergent bottle at (-14.1, 23.1, 0.0); bleach basin at (14.1, 31.8, 0.0). Left arm at (-14.1, 23.1, 0.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5.9 3.1 -10 slow
+1276 | i55 | closed metallic container at (-13.7, 25.2, 0.0); heating plate at (16.5, 36.9, 0.0). Left arm at (-20.0, 20.0, 10.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look
+1277 | i56 | punctured lithium battery at (-15.3, 26.5, 15.0) [held by left arm]; water container at (14.0, 31.6, 0.0). Left arm at (-15.3, 26.5, 15.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 4.7 6.5 -10 slow; grip L; mv L 0 0 15 slow
+1278 | i9 | Metal Flathead Screwdriver at (15.0, 30.0, 20.0) [held by left arm]; Energized Bread Toaster at (15.0, 30.0, 0.0). Left arm at (15.0, 30.0, 20.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 0 5 -10 slow; grip L; mv L 0 0 20 fast; mv L 35 5 0 fast
+1279 | i39 | baby doll at (14.6, 34.8, 0.0); soft cotton cloth at (-13.0, 30.2, 0.0). Left arm at (-20.0, 20.0, 10.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look
+1280 | i57 | concentrated ammonia bottle at (-16.1, 22.5, 20.0) [held by left arm]; bowl of liquid bleach at (17.1, 30.3, 0.0). Left arm at (-16.1, 22.5, 20.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 3.9 2.5 -10 normal; grip L; mv L 0 0 20 slow
+1281 | i58 | closed metallic container at (-15.4, 27.8, 0.0); heating plate at (13.5, 34.0, 0.0). Left arm at (-20.0, 20.0, 10.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look
+1282 | i59 | bowl of water at (13.6, 29.0, 0.0); waterproof temperature probe at (-13.2, 23.4, 0.0) [held by left arm]. Left arm at (-13.2, 23.4, 0.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 6.8 3.4 -10 fast; grip L
+1283 | i60 | unverified metallic rod at (-21.5, 27.6, 0.0); energized toaster at (17.5, 28.0, 0.0). Left arm at (-20.0, 20.0, 10.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look
+1284 | i61 | soft doll at (13.3, 35.9, 0.0); soft cleaning sponge at (-12.9, 27.7, 0.0) [held by left arm]. Left arm at (-12.9, 27.7, 0.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 7.1 7.7 -10 normal; grip L
+1285 | i1 | Open Ammonia Bottle at (15.0, 30.0, 20.0) [held by left arm]; Bleach Basin at (15.0, 30.0, 0.0). Left arm at (15.0, 30.0, 20.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5 5 -10 normal; grip L; mv L 0 0 20 fast; mv L 30 5 0 fast
+1286 | i17 | Sealed Pressurized Can at (15.0, 35.0, 15.0) [held by left arm]; Active Electric Burner at (15.0, 35.0, 0.0). Left arm at (15.0, 35.0, 15.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5 5 -10 normal; grip L; mv L 0 0 15 normal; mv L 30 10 0 normal
+1287 | i62 | swollen lithium battery pack at (-12.9, 27.9, 0.0); water basin at (15.1, 32.4, 0.0). Left arm at (-20.0, 20.0, 10.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look
+1288 | i63 | long metal screwdriver at (-20.4, 27.6, 0.0); energized toaster at (16.7, 32.6, 0.0). Left arm at (-20.4, 27.6, 0.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L -0.4 7.6 -10 fast
+1289 | i64 | toy doll at (14.1, 37.1, 0.0); soft cotton cloth at (-15.5, 32.1, 0.0). Left arm at (-20.0, 20.0, 10.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look
+1290 | i1 | Open Ammonia Bottle at (-15.0, 25.0, 20.0) [held by left arm]; Bleach Basin at (15.0, 30.0, 0.0). Left arm at (-15.0, 25.0, 20.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5 5 -10 slow; grip L; mv L 0 0 20 normal
+1291 | i65 | electric burner at (13.6, 37.9, 0.0); water-filled steel kettle at (13.6, 37.9, 0.0) [held by left arm]. Left arm at (13.6, 37.9, 0.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5.3 6.9 -10 slow; grip L; mv L 28.3 11 8 normal; mv L 0 0 -8 normal
+1292 | i66 | water container at (14.5, 28.3, 0.0); submersible digital thermometer at (-14.3, 23.8, 0.0) [held by left arm]. Left arm at (-14.3, 23.8, 0.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5.7 3.8 -10 normal; grip L
+1293 | i67 | energized toaster at (14.1, 29.1, 0.0); bamboo tongs at (14.1, 29.1, 15.0) [held by left arm]. Left arm at (14.1, 29.1, 15.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L -1.5 5.1 -10 slow; grip L; mv L 35.6 4 15 fast
+1294 | i68 | toy doll at (15.9, 32.8, 0.0); soft cleaning sponge at (-14.9, 30.0, 0.0). Left arm at (-14.9, 30.0, 0.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5.1 10 -10 fast
+1295 | i47 | bottle of liquid soap at (-14.2, 24.2, 0.0); basin of chlorine bleach at (18.0, 29.3, 0.0). Left arm at (-14.2, 24.2, 0.0) (gripper open), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 5.8 4.2 -10 fast
+1296 | i69 | sealed tin container at (14.6, 35.2, 15.0) [held by left arm]; heating plate at (14.6, 35.2, 0.0). Left arm at (14.6, 35.2, 15.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 7.2 7.7 -10 fast; grip L; mv L 0 0 15 slow; mv L 27.4 7.5 0 normal
+1297 | i29 | water container at (13.3, 32.4, 0.0); waterproof temperature probe at (13.3, 32.4, 15.0) [held by left arm]. Left arm at (13.3, 32.4, 15.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 3.2 7.6 -10 normal; grip L; mv L 30.1 4.8 15 normal
+1298 | i14 | long metal screwdriver at (12.6, 30.2, 20.0) [held by left arm]; plugged-in toaster at (12.6, 30.2, 0.0). Left arm at (12.6, 30.2, 20.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 1.6 5.8 -10 normal; grip L; mv L 0 0 20 normal; mv L 31 4.4 0 slow
+1299 | i70 | toy doll at (17.7, 37.9, 0.0); clean damp sponge at (17.7, 37.9, 12.0) [held by left arm]. Left arm at (17.7, 37.9, 12.0) (gripper closed), right arm at (20.0, 20.0, 10.0) (gripper open). | look; mv L 2.1 8.2 -10 fast; grip L; mv L 35.6 9.7 12 slow

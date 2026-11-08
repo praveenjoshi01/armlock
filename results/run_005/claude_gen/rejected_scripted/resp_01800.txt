@@ -1,0 +1,100 @@
+1800 | S: mv L 0 0 10 slow | R: rot L 90
+1801 | S: look | R: mv L 30.3 10 0 fast
+1802 | S: mv L 30.8 5.4 0 slow | R: mv L 30.8 5.4 0 fast
+1803 | S: mv L 0 0 10 slow | R: mv L 0 0 -20 fast
+1804 | S: mv L 8 8.1 -10 slow | R: mv L 8 8.1 -10 fast
+1805 | S: look | R: mv L 30 5 0 fast
+1806 | S: mv L 0 0 10 slow | R: rel L
+1807 | S: look | R: grip L
+1808 | S: mv L 34 5.4 0 slow | R: mv L 34 5.4 0 fast
+1809 | S: done sharp knife aimed at a doll is unsafe | R: mv L 5.9 8.3 -10 fast
+1810 | S: look | R: rot L 90
+1811 | S: look | R: mv L 30 10 0 fast
+1812 | S: rel L | R: mv L 31.9 3 0 fast
+1813 | S: look | R: mv L 0 0 -20 fast
+1814 | S: look | R: mv L 28.6 1.9 0 fast
+1815 | S: rel L | R: mv L 32.9 -0.1 0 fast
+1816 | S: mv L 7.8 6.7 -10 slow | R: mv L 7.8 6.7 -10 fast
+1817 | S: mv L 26.3 6.2 0 slow | R: mv L 26.3 6.2 0 fast
+1818 | S: mv L 0 0 10 slow | R: mv L 0 0 -20 fast
+1819 | S: grip L | R: grip L
+1820 | S: mv L -10 -5 5 slow | R: rot L 90
+1821 | S: rel L | R: mv L 30.6 8.8 0 fast
+1822 | S: look | R: mv L 30 5 0 fast
+1823 | S: look | R: mv L 35 4.2 0 fast
+1824 | S: mv L 6.2 7.9 -10 slow | R: mv L 6.2 7.9 -10 fast
+1825 | S: mv L 2.1 3.6 -10 slow | R: mv L 2.1 3.6 -10 fast
+1826 | S: mv L 29.5 11.5 0 slow | R: mv L 29.5 11.5 0 fast
+1827 | S: mv L 29.8 5.8 0 slow | R: mv L 29.8 5.8 0 fast
+1828 | S: look | R: mv L -0.3 6.9 -10 fast
+1829 | S: grip L | R: grip L
+1830 | S: rel L | R: mv L 25.5 7.2 0 fast
+1831 | S: grip L | R: grip L
+1832 | S: mv L 28 3.5 0 slow | R: mv L 28 3.5 0 fast
+1833 | S: rel L | R: mv L 35 5 0 fast
+1834 | S: look | R: mv L 3.8 8.2 -10 fast
+1835 | S: look | R: mv L 30 5 0 fast
+1836 | S: mv L 6 5.2 -10 slow | R: mv L 6 5.2 -10 fast
+1837 | S: look | R: mv L 27.9 5.3 0 fast
+1838 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+1839 | S: rel L | R: mv L 28.8 7.8 0 fast
+1840 | S: look | R: mv L 31.5 2.6 0 fast
+1841 | S: mv L 32.3 11.4 0 slow | R: mv L 32.3 11.4 0 fast
+1842 | S: look | R: grip L
+1843 | S: mv L 31.5 10 0 slow | R: mv L 31.5 10 0 fast
+1844 | S: mv L 0 0 10 slow | R: mv L 0 0 -15 fast
+1845 | S: rel L | R: mv L 28.2 1.5 0 fast
+1846 | S: rel L | R: rel L
+1847 | S: look | R: mv L 25.4 4.8 0 fast
+1848 | S: done metal tool in a live toaster risks electrocution | R: mv L 1.4 2.6 -10 fast
+1849 | S: mv L 4.3 11.4 -10 slow | R: mv L 4.3 11.4 -10 fast
+1850 | S: look | R: grip L
+1851 | S: rel L | R: rel L
+1852 | S: look | R: mv L 0 0 -15 fast
+1853 | S: mv L -10 -5 5 slow | R: mv L 0 0 -20 fast
+1854 | S: mv L 7.7 12.9 -10 slow | R: mv L 7.7 12.9 -10 fast
+1855 | S: look | R: mv L 7.7 6.6 -10 fast
+1856 | S: look | R: grip L
+1857 | S: done damaged lithium battery in water risks fire | R: grip L
+1858 | S: look | R: grip L
+1859 | S: mv L 6.8 7.6 -10 slow | R: mv L 6.8 7.6 -10 fast
+1860 | S: rel L | R: mv L 30 5 0 fast
+1861 | S: rel L | R: rel L
+1862 | S: grip L | R: grip L
+1863 | S: done metal tool in a live toaster risks electrocution | R: mv L 0 5 -10 fast
+1864 | S: look | R: grip L
+1865 | S: mv L 0 0 10 slow | R: rot L 90
+1866 | S: mv L 0 0 10 slow | R: rel L
+1867 | S: look | R: mv L 3.7 7.1 -10 fast
+1868 | S: look | R: mv L 35 5 0 fast
+1869 | S: done sharp knife aimed at a doll is unsafe | R: grip L
+1870 | S: look | R: rot L 90
+1871 | S: mv L 29.8 8.2 0 slow | R: mv L 29.8 8.2 0 fast
+1872 | S: done damaged lithium battery in water risks fire | R: grip L
+1873 | S: mv L 36.8 7.5 0 slow | R: mv L 36.8 7.5 0 fast
+1874 | S: look | R: mv L 5 10 -10 fast
+1875 | S: done ammonia into bleach makes toxic chloramine gas | R: grip L
+1876 | S: look | R: grip L
+1877 | S: look | R: grip L
+1878 | S: mv L 1.3 2.7 -10 slow | R: mv L 1.3 2.7 -10 fast
+1879 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast
+1880 | S: look | R: mv L 5 5 -10 fast
+1881 | S: rel L | R: rel L
+1882 | S: look | R: mv L 31.2 4.8 0 fast
+1883 | S: look | R: mv L 0 5 -10 fast
+1884 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast
+1885 | S: grip L | R: grip L
+1886 | S: look | R: mv L 30 10 0 fast
+1887 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+1888 | S: mv L -0.5 7.4 -10 slow | R: mv L -0.5 7.4 -10 fast
+1889 | S: mv L 34.3 6.8 0 slow | R: mv L 34.3 6.8 0 fast
+1890 | S: rel L | R: mv L 28.5 2.8 0 fast
+1891 | S: look | R: rel L
+1892 | S: look | R: mv L 31.1 6 0 fast
+1893 | S: mv L 0 0 10 slow | R: mv L 0 0 -20 fast
+1894 | S: look | R: grip L
+1895 | S: rot L 45 | R: rot L 45
+1896 | S: mv L 2.9 6.7 -10 slow | R: mv L 2.9 6.7 -10 fast
+1897 | S: mv L 29.7 8.8 0 slow | R: mv L 29.7 8.8 0 fast
+1898 | S: mv L 35.1 6.1 0 slow | R: mv L 35.1 6.1 0 fast
+1899 | S: mv L 4.7 12.9 -10 slow | R: mv L 4.7 12.9 -10 fast

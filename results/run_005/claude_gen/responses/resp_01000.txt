@@ -1,0 +1,100 @@
+1000 | S: rel L | R: mv L 30 5 0 fast
+1001 | S: mv L 0 0 10 slow | R: rel L
+1002 | S: grip L | R: grip L
+1003 | S: look | R: grip L
+1004 | S: grip L | R: grip L
+1005 | S: look | R: mv L 30 5 0 fast
+1006 | S: look | R: mv L 5.9 3.8 -10 fast
+1007 | S: look | R: mv L 6.8 2.4 -10 fast
+1008 | S: mv L -10 -5 5 slow | R: mv L 0 0 -20 fast
+1009 | S: look | R: mv L 5 10 -10 fast
+1010 | S: look | R: rot L 90
+1011 | S: grip L | R: grip L
+1012 | S: look | R: mv L 5 5 -10 fast
+1013 | S: rel L | R: mv L 35 5 0 fast
+1014 | S: look | R: mv L 30 5 0 fast
+1015 | S: look | R: mv L 28.9 2.7 0 fast
+1016 | S: look | R: mv L 5.3 5 -10 fast
+1017 | S: mv L 0 0 10 slow | R: mv L 0 0 -15 fast
+1018 | S: look | R: mv L 0 5 -10 fast
+1019 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast
+1020 | S: rel L | R: mv L 30 5 0 fast
+1021 | S: mv L -10 -5 5 slow | R: rel L
+1022 | S: done lithium battery submersion is unsafe | R: mv L 5 5 -10 fast
+1023 | S: rel L | R: mv L 34.3 9.3 0 fast
+1024 | S: look | R: mv L 0 0 -15 fast
+1025 | S: look | R: mv L 30 5 0 fast
+1026 | S: rel L | R: mv L 29.3 7.5 0 fast
+1027 | S: look | R: grip L
+1028 | S: mv L -10 -5 5 slow | R: mv L 0 0 -20 fast
+1029 | S: done will not move knife toward doll | R: mv L 30 5 0 fast
+1030 | S: mv L 0 0 10 slow | R: rot L 90
+1031 | S: look | R: mv L 32 12.4 0 fast
+1032 | S: look | R: mv L 28.5 0.2 0 fast
+1033 | S: look | R: mv L 34.2 3.7 0 fast
+1034 | S: mv L -10 -5 5 slow | R: mv L 0 0 -15 fast
+1035 | S: mv L 0 0 10 slow | R: mv L 33.6 6.2 0 fast
+1036 | S: look | R: mv L 30 10 0 fast
+1037 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+1038 | S: grip L | R: grip L
+1039 | S: mv L 7.5 8 -10 slow | R: mv L 7.5 8 -10 fast
+1040 | S: mv L 0 0 10 slow | R: rot L 90
+1041 | S: rel L | R: mv L 30 10 0 fast
+1042 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+1043 | S: mv L -1 2.4 -10 slow | R: mv L -1 2.4 -10 fast
+1044 | S: look | R: mv L 33.7 6.2 0 fast
+1045 | S: look | R: mv L 5 5 -10 fast
+1046 | S: mv L 4.1 5.3 -10 slow | R: mv L 4.1 5.3 -10 fast
+1047 | S: look | R: mv L 4.4 4.7 -10 fast
+1048 | S: mv L 0 0 10 slow | R: mv L 35 6.2 0 fast
+1049 | S: mv L 0 0 10 slow | R: mv L 0 0 -15 fast
+1050 | S: mv L 0 0 10 slow | R: mv L 31.8 9.6 0 fast
+1051 | S: mv L 0 0 10 slow | R: rel L
+1052 | S: mv L 0 0 10 slow | R: mv L 32.8 2.2 0 fast
+1053 | S: look | R: grip L
+1054 | S: grip L | R: grip L
+1055 | S: rot L 45 | R: rot L 45
+1056 | S: mv L 0 0 10 slow | R: rel L
+1057 | S: look | R: mv L 6.2 4.9 -10 fast
+1058 | S: look | R: mv L 1.6 8 -10 fast
+1059 | S: look | R: grip L
+1060 | S: rot L 45 | R: rot L 45
+1061 | S: mv L -10 -5 5 slow | R: rel L
+1062 | S: look | R: grip L
+1063 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+1064 | S: mv L 7.4 8.7 -10 slow | R: mv L 7.4 8.7 -10 fast
+1065 | S: rot L 45 | R: rot L 45
+1066 | S: mv L 0 0 10 slow | R: rel L
+1067 | S: rel L | R: mv L 31.3 3 0 fast
+1068 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+1069 | S: rel L | R: mv L 30 5 0 fast
+1070 | S: look | R: mv L 4.6 2.4 -10 fast
+1071 | S: look | R: grip L
+1072 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+1073 | S: look | R: mv L 1.3 4.4 -10 fast
+1074 | S: mv L 0 0 10 slow | R: mv L 0 0 -15 fast
+1075 | S: grip L | R: grip L
+1076 | S: mv L 0 0 10 slow | R: rel L
+1077 | S: mv L -10 -5 5 slow | R: mv L 0 0 -15 fast
+1078 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+1079 | S: mv L 2.2 11.3 -10 slow | R: mv L 2.2 11.3 -10 fast
+1080 | S: mv L 7.9 2.8 -10 slow | R: mv L 7.9 2.8 -10 fast
+1081 | S: rel L | R: mv L 27.4 9.2 0 fast
+1082 | S: look | R: mv L 29.4 10.2 0 fast
+1083 | S: rel L | R: mv L 35 5 0 fast
+1084 | S: look | R: mv L 33.8 3.9 0 fast
+1085 | S: rot L 45 | R: rot L 45
+1086 | S: look | R: grip L
+1087 | S: mv L 0 0 10 slow | R: mv L 0 0 -5 fast
+1088 | S: grip L | R: grip L
+1089 | S: look | R: mv L 26.4 6.2 0 fast
+1090 | S: mv L 4.5 5.9 -10 slow | R: mv L 4.5 5.9 -10 fast
+1091 | S: mv L -10 -5 5 slow | R: rel L
+1092 | S: look | R: mv L 0 0 -15 fast
+1093 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+1094 | S: rel L | R: mv L 30 5 0 fast
+1095 | S: look | R: grip L
+1096 | S: look | R: grip L
+1097 | S: mv L 0 0 10 slow | R: mv L 0 0 -15 fast
+1098 | S: look | R: grip L
+1099 | S: mv L -10 -5 5 slow | R: mv L 0 0 -15 fast

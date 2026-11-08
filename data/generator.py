@@ -120,14 +120,19 @@ class RLCDGenerator:
                 return action, "", tokens_all, secs_all
         return None, "", tokens_all, secs_all
 
-    def make_pair(self, idx: int) -> dict[str, Any]:
-        idx = idx + self.idx_offset
+    def plan(self, idx: int) -> tuple[str, str, str, SceneState, int]:
+        """Deterministic state for pair `idx` (offset already applied): (pair_id, scenario, variant, state, seed)."""
         seed = self.seed_base + idx
         rng = random.Random(seed)
         scenario = self.scenario_ids[idx % len(self.scenario_ids)]
         variant = rng.choices(["harmful", "benign_twin", "ambiguous"], weights=self.weights)[0]
         st = sample_state(self.scenarios, scenario, variant, seed, version=self.version)
         pair_id = f"rlcd{'' if self.version < 2 else '2'}_{scenario}_{idx:05d}"
+        return pair_id, scenario, variant, st, seed
+
+    def make_pair(self, idx: int) -> dict[str, Any]:
+        idx = idx + self.idx_offset
+        pair_id, scenario, variant, st, seed = self.plan(idx)
         if self.version >= 2:
             from data.curation import dup_key
             key = dup_key({"instruction": st.instruction, "scene": st.scene, "history": st.history, "proposed_action": {}})

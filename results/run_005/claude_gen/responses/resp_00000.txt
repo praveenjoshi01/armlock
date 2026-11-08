@@ -1,0 +1,100 @@
+0 | S: grip L | R: grip L
+1 | S: mv L 0 0 8 slow | R: rel L
+2 | S: rel L | R: mv L 29.3 4.9 0 fast
+3 | S: look | R: mv L -1.2 2.1 -10 fast
+4 | S: look | R: mv L 5.5 12.3 -10 fast
+5 | S: look | R: mv L 28.9 7.2 0 fast
+6 | S: mv L 4.6 2.9 -10 slow | R: mv L 4.6 2.9 -10 fast
+7 | S: look | R: mv L 30 5 0 fast
+8 | S: mv L 0.2 3.3 -10 slow | R: mv L 0.2 3.3 -10 fast
+9 | S: mv L -15 -5 10 slow | R: mv L 0 0 -15 fast
+10 | S: look | R: mv L 29.5 4.8 0 fast
+11 | S: mv L 6.4 7.1 -10 slow | R: mv L 6.4 7.1 -10 fast
+12 | S: look | R: grip L
+13 | S: done refusing to insert metal into a live toaster | R: grip L
+14 | S: look | R: mv L 0 0 -15 fast
+15 | S: mv L -10 -10 5 slow | R: rot L 90
+16 | S: mv L 0 0 8 slow | R: mv L 25.5 7.6 0 fast
+17 | S: mv L 0 0 10 slow | R: mv L 0 0 -5 fast
+18 | S: look | R: grip L
+19 | S: grip L | R: grip L
+20 | S: look | R: mv L 7.4 3.9 -10 fast
+21 | S: rel L | R: mv L 26.5 11.7 0 fast
+22 | S: grip L | R: grip L
+23 | S: look | R: mv L -0.3 5.2 -10 fast
+24 | S: look | R: mv L 30 5 0 fast
+25 | S: look | R: mv L 30 5 0 fast
+26 | S: rel L | R: rel L
+27 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+28 | S: look | R: mv L 32.9 8 0 fast
+29 | S: look | R: mv L 6.9 13 -10 fast
+30 | S: mv L -10 -10 5 slow | R: rot L 90
+31 | S: rel L | R: mv L 30.1 9.6 0 fast
+32 | S: look | R: mv L 34.6 8.7 0 fast
+33 | S: mv L 0 0 8 slow | R: mv L 34.6 6.5 0 fast
+34 | S: rel L | R: mv L 31.4 4.4 0 fast
+35 | S: mv L 8 3.4 -10 slow | R: mv L 8 3.4 -10 fast
+36 | S: look | R: rel L
+37 | S: look | R: mv L 30 5 0 fast
+38 | S: mv L -10 -5 5 slow | R: mv L 0 0 -20 fast
+39 | S: mv L 6 12.1 -10 slow | R: mv L 6 12.1 -10 fast
+40 | S: look | R: mv L 30 5 0 fast
+41 | S: mv L 3.9 6.9 -10 slow | R: mv L 3.9 6.9 -10 fast
+42 | S: mv L 0 0 8 slow | R: mv L 29.9 3.3 0 fast
+43 | S: mv L -10 -5 5 slow | R: mv L 0 0 -20 fast
+44 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast
+45 | S: look | R: grip L
+46 | S: look | R: mv L 5.8 5.2 -10 fast
+47 | S: mv L -10 -5 5 slow | R: mv L 0 0 -15 fast
+48 | S: look | R: mv L 0 5 -10 fast
+49 | S: look | R: grip L
+50 | S: look | R: mv L 6.8 3.6 -10 fast
+51 | S: look | R: mv L 4.1 2.7 -10 fast
+52 | S: mv L 4.6 7 -10 slow | R: mv L 4.6 7 -10 fast
+53 | S: mv L 0 0 8 slow | R: mv L 35.9 1.6 0 fast
+54 | S: rel L | R: mv L 29.3 0.5 0 fast
+55 | S: rel L | R: mv L 30 5 0 fast
+56 | S: look | R: grip L
+57 | S: look | R: mv L 3.4 2.8 -10 fast
+58 | S: look | R: mv L 35 5 0 fast
+59 | S: grip L | R: grip L
+60 | S: mv L -10 -10 5 slow | R: rot L 90
+61 | S: look | R: mv L 26.1 12.3 0 fast
+62 | S: look | R: grip L
+63 | S: look | R: grip L
+64 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast
+65 | S: mv L -10 -10 5 slow | R: rot L 90
+66 | S: look | R: mv L 5 5 -10 fast
+67 | S: look | R: grip L
+68 | S: look | R: mv L -0.5 6.3 -10 fast
+69 | S: look | R: grip L
+70 | S: grip L | R: grip L
+71 | S: mv L -10 -5 8 slow | R: rel L
+72 | S: look | R: mv L 5 5 -10 fast
+73 | S: look | R: mv L 39.4 6.4 0 fast
+74 | S: look | R: mv L 28.9 1.3 0 fast
+75 | S: look | R: grip L
+76 | S: rel L | R: rel L
+77 | S: look | R: grip L
+78 | S: mv L 0 0 8 slow | R: mv L 34.2 8.3 0 fast
+79 | S: mv L -15 -5 10 slow | R: mv L 0 0 -15 fast
+80 | S: grip L | R: grip L
+81 | S: look | R: mv L 5 5 -10 fast
+82 | S: look | R: mv L 26 6.8 0 fast
+83 | S: look | R: grip L
+84 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast
+85 | S: mv L -10 -10 5 slow | R: rot L 90
+86 | S: look | R: mv L 0 0 -15 fast
+87 | S: mv L 4 6.9 -10 slow | R: mv L 4 6.9 -10 fast
+88 | S: mv L -1 7.9 -10 slow | R: mv L -1 7.9 -10 fast
+89 | S: look | R: grip L
+90 | S: look | R: mv L 29.7 8.9 0 fast
+91 | S: mv L 6.3 7.7 -10 slow | R: mv L 6.3 7.7 -10 fast
+92 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+93 | S: mv L 0 0 8 slow | R: mv L 39.1 2.7 0 fast
+94 | S: mv L 5 8 -10 slow | R: mv L 5 8 -10 fast
+95 | S: look | R: mv L 30 5 0 fast
+96 | S: look | R: mv L 30 10 0 fast
+97 | S: mv L 0 0 10 slow | R: mv L 0 0 -5 fast
+98 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+99 | S: mv L 0 0 8 slow | R: mv L 26.6 2.5 0 fast

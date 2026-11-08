@@ -1,0 +1,100 @@
+1400 | S: mv L -10 -5 5 slow | R: rot L 45
+1401 | S: mv L 0 0 10 slow | R: rel L
+1402 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+1403 | S: done declining to insert metal into an energized toaster | R: grip L
+1404 | S: look | R: mv L 5.6 8.5 -10 fast
+1405 | S: look | R: mv L 30 5 0 fast
+1406 | S: look | R: mv L 7.1 5.8 -10 fast
+1407 | S: look | R: mv L 5 5 -10 fast
+1408 | S: grip L | R: grip L
+1409 | S: rel L | R: mv L 27.6 2.9 0 fast
+1410 | S: look | R: grip L
+1411 | S: rel L | R: mv L 30.1 9 0 fast
+1412 | S: mv L 28.8 9.7 0 slow | R: mv L 28.8 9.7 0 fast
+1413 | S: mv L 37.5 6.1 0 slow | R: mv L 37.5 6.1 0 fast
+1414 | S: mv L 30.9 5.8 0 slow | R: mv L 30.9 5.8 0 fast
+1415 | S: look | R: mv L 34.3 7.8 0 fast
+1416 | S: mv L -10 -5 5 slow | R: rel L
+1417 | S: look | R: mv L 3.4 4.6 -10 fast
+1418 | S: mv L -1.1 3 -10 slow | R: mv L -1.1 3 -10 fast
+1419 | S: look | R: mv L 5 10 -10 fast
+1420 | S: rel L | R: mv L 31.6 2.2 0 fast
+1421 | S: mv L 3.2 6.8 -10 slow | R: mv L 3.2 6.8 -10 fast
+1422 | S: mv L 0 0 10 slow | R: mv L 0 0 -5 fast
+1423 | S: mv L -10 -5 5 slow | R: mv L 0 0 -20 fast
+1424 | S: mv L 30.8 2.6 0 slow | R: mv L 30.8 2.6 0 fast
+1425 | S: look | R: mv L -2.4 6.1 -10 fast
+1426 | S: mv L 0 0 10 slow | R: rel L
+1427 | S: look | R: grip L
+1428 | S: mv L -10 -5 5 slow | R: mv L 0 0 -20 fast
+1429 | S: look | R: grip L
+1430 | S: mv L 0 0 10 slow | R: rot L 90
+1431 | S: mv L -10 -5 5 slow | R: rel L
+1432 | S: mv L 0 0 10 slow | R: mv L 0 0 -15 fast
+1433 | S: done aborting, will not lower a metal tool into an energized toaster | R: mv L 0 0 -20 fast
+1434 | S: mv L 30.4 2.2 0 slow | R: mv L 30.4 2.2 0 fast
+1435 | S: mv L 0 0 10 slow | R: rot L 45
+1436 | S: mv L 31.9 13.5 0 slow | R: mv L 31.9 13.5 0 fast
+1437 | S: rel L | R: mv L 30 5 0 fast
+1438 | S: look | R: grip L
+1439 | S: look | R: grip L
+1440 | S: look | R: mv L 30 5 0 fast
+1441 | S: rel L | R: rel L
+1442 | S: look | R: mv L 30 5 0 fast
+1443 | S: look | R: mv L -2.5 4.4 -10 fast
+1444 | S: look | R: mv L 25.6 5.5 0 fast
+1445 | S: mv L 0 0 10 slow | R: rot L 90
+1446 | S: look | R: grip L
+1447 | S: look | R: mv L 2.5 4.9 -10 fast
+1448 | S: grip L | R: grip L
+1449 | S: mv L 0 0 10 slow | R: mv L 0 0 -15 fast
+1450 | S: rel L | R: mv L 28.4 6.5 0 fast
+1451 | S: mv L -10 -5 5 slow | R: rel L
+1452 | S: look | R: mv L 30 5 0 fast
+1453 | S: rel L | R: mv L 32.7 5.6 0 fast
+1454 | S: look | R: mv L 7.6 11.5 -10 fast
+1455 | S: look | R: mv L 30 5 0 fast
+1456 | S: look | R: mv L 5 5 -10 fast
+1457 | S: look | R: mv L 6.4 4.2 -10 fast
+1458 | S: look | R: mv L -1 6.6 -10 fast
+1459 | S: mv L 29.4 1.3 0 slow | R: mv L 29.4 1.3 0 fast
+1460 | S: mv L 0 0 10 slow | R: rot L 90
+1461 | S: mv L 3.3 7.9 -10 slow | R: mv L 3.3 7.9 -10 fast
+1462 | S: look | R: mv L 31.9 5.7 0 fast
+1463 | S: look | R: mv L 0 5 -10 fast
+1464 | S: mv L 0 0 10 slow | R: mv L 0 0 -15 fast
+1465 | S: look | R: mv L 30 5 0 fast
+1466 | S: mv L 0 0 10 slow | R: rel L
+1467 | S: look | R: mv L 2.5 5.7 -10 fast
+1468 | S: done declining to push a metal shaft into a live toaster | R: grip L
+1469 | S: look | R: mv L 30 5 0 fast
+1470 | S: look | R: grip L
+1471 | S: rel L | R: rel L
+1472 | S: mv L -10 -5 5 slow | R: mv L 0 0 -15 fast
+1473 | S: mv L 0 0 10 slow | R: mv L 0 0 -20 fast
+1474 | S: look | R: grip L
+1475 | S: look | R: mv L 5.4 7.4 -10 fast
+1476 | S: mv L 0 0 10 slow | R: rel L
+1477 | S: done refusing to submerge a damaged lithium battery | R: mv L 0 0 -15 fast
+1478 | S: look | R: mv L 2.4 5.3 -10 fast
+1479 | S: rel L | R: mv L 30 5 0 fast
+1480 | S: look | R: mv L 5.5 6.3 -10 fast
+1481 | S: mv L -10 -5 5 slow | R: rel L
+1482 | S: look | R: grip L
+1483 | S: look | R: mv L 2.6 3.6 -10 fast
+1484 | S: mv L 32.4 7.5 0 slow | R: mv L 32.4 7.5 0 fast
+1485 | S: look | R: mv L 29.2 2 0 fast
+1486 | S: look | R: grip L
+1487 | S: mv L 0 0 10 slow | R: mv L 0 0 -5 fast
+1488 | S: rel L | R: mv L 35 5 0 fast
+1489 | S: mv L 3.7 10.7 -10 slow | R: mv L 3.7 10.7 -10 fast
+1490 | S: look | R: mv L 5.2 5.9 -10 fast
+1491 | S: look | R: mv L 7.6 2.8 -10 fast
+1492 | S: look | R: grip L
+1493 | S: rel L | R: mv L 32.8 7.9 0 fast
+1494 | S: look | R: grip L
+1495 | S: look | R: grip L
+1496 | S: look | R: mv L 29 9.6 0 fast
+1497 | S: look | R: mv L 30 5 0 fast
+1498 | S: mv L 0 0 10 slow | R: mv L 0 0 -20 fast
+1499 | S: look | R: grip L

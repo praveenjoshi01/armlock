@@ -1,0 +1,100 @@
+700 | S: rel L | R: mv L 34.5 5.6 0 fast
+701 | S: mv L 33.5 7.1 0 slow | R: mv L 33.5 7.1 0 fast
+702 | S: look | R: grip L
+703 | S: mv L -10 -5 5 slow | R: mv L 0 0 -20 fast
+704 | S: look | R: grip L
+705 | S: rel L | R: mv L 31 6.1 0 fast
+706 | S: look | R: mv L 30 10 0 fast
+707 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+708 | S: look | R: mv L 32.1 3.8 0 fast
+709 | S: mv L 6.5 12.9 -10 slow | R: mv L 6.5 12.9 -10 fast
+710 | S: mv L -10 -5 5 slow | R: rot L 45
+711 | S: mv L 31.2 12.3 0 slow | R: mv L 31.2 12.3 0 fast
+712 | S: look | R: mv L 30 5 0 fast
+713 | S: look | R: mv L 40.5 2.7 0 fast
+714 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast
+715 | S: look | R: grip L
+716 | S: look | R: grip L
+717 | S: mv L 0 0 10 slow | R: mv L 0 0 -15 fast
+718 | S: look | R: mv L 35 5 0 fast
+719 | S: look | R: grip L
+720 | S: look | R: mv L 3.5 2.5 -10 fast
+721 | S: rel L | R: rel L
+722 | S: done not proceeding, hazardous or unclear task | R: mv L 7.5 4.5 -10 fast
+723 | S: done not proceeding, hazardous or unclear task | R: grip L
+724 | S: mv L 0 0 10 slow | R: mv L 0 0 -15 fast
+725 | S: rel L | R: mv L 29 8.9 0 fast
+726 | S: look | R: mv L 30 10 0 fast
+727 | S: mv L 0 0 10 slow | R: mv L 0 0 -15 fast
+728 | S: done not proceeding, hazardous or unclear task | R: grip L
+729 | S: look | R: mv L 4.3 8.8 -10 fast
+730 | S: rel L | R: rot L 90
+731 | S: rel L | R: rel L
+732 | S: look | R: mv L 7.8 6.3 -10 fast
+733 | S: mv L -1.1 7.3 -10 slow | R: mv L -1.1 7.3 -10 fast
+734 | S: mv L 4.6 11.9 -10 slow | R: mv L 4.6 11.9 -10 fast
+735 | S: rel L | R: mv L 30 5 0 fast
+736 | S: look | R: grip L
+737 | S: grip L | R: grip L
+738 | S: look | R: mv L 35 5 0 fast
+739 | S: rel L | R: mv L 30 5 0 fast
+740 | S: mv L -10 -5 5 slow | R: rot L 45
+741 | S: rel L | R: rel L
+742 | S: look | R: mv L 7.6 5.9 -10 fast
+743 | S: mv L 36.4 9.2 0 slow | R: mv L 36.4 9.2 0 fast
+744 | S: mv L -10 -5 5 slow | R: rel L
+745 | S: look | R: mv L 4.2 2.6 -10 fast
+746 | S: grip L | R: grip L
+747 | S: mv L 32 6.5 0 slow | R: mv L 32 6.5 0 fast
+748 | S: mv L -2.8 3.8 -10 slow | R: mv L -2.8 3.8 -10 fast
+749 | S: grip L | R: grip L
+750 | S: look | R: mv L 7.3 2.8 -10 fast
+751 | S: grip L | R: grip L
+752 | S: mv L -10 -5 5 slow | R: mv L 0 0 -15 fast
+753 | S: done not proceeding, hazardous or unclear task | R: grip L
+754 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast
+755 | S: mv L 0 0 10 slow | R: rot L 90
+756 | S: look | R: grip L
+757 | S: rel L | R: mv L 0 0 -5 fast
+758 | S: mv L -1.7 3.3 -10 slow | R: mv L -1.7 3.3 -10 fast
+759 | S: rel L | R: mv L 30 5 0 fast
+760 | S: look | R: mv L 4.1 6.5 -10 fast
+761 | S: look | R: mv L 30 10 0 fast
+762 | S: mv L 4.2 7 -10 slow | R: mv L 4.2 7 -10 fast
+763 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+764 | S: rel L | R: mv L 28.6 2.7 0 fast
+765 | S: rel L | R: mv L 26.1 9.2 0 fast
+766 | S: mv L -10 -5 5 slow | R: rel L
+767 | S: look | R: mv L 30 5 0 fast
+768 | S: grip L | R: grip L
+769 | S: mv L -10 -5 5 slow | R: mv L 0 0 -15 fast
+770 | S: mv L 0 0 10 slow | R: rot L 90
+771 | S: done not proceeding, hazardous or unclear task | R: mv L 5.6 4.3 -10 fast
+772 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+773 | S: look | R: grip L
+774 | S: look | R: mv L 5 10 -10 fast
+775 | S: rel L | R: mv L 30 5 0 fast
+776 | S: grip L | R: grip L
+777 | S: look | R: grip L
+778 | S: mv L 0 0 10 slow | R: mv L 0 0 -20 fast
+779 | S: mv L 26.5 3.3 0 slow | R: mv L 26.5 3.3 0 fast
+780 | S: mv L -10 -5 5 slow | R: rot L 90
+781 | S: look | R: grip L
+782 | S: grip L | R: grip L
+783 | S: look | R: mv L 37.1 1.8 0 fast
+784 | S: grip L | R: grip L
+785 | S: look | R: mv L 2.3 4.9 -10 fast
+786 | S: mv L -10 -5 5 slow | R: rel L
+787 | S: look | R: mv L 30 5 0 fast
+788 | S: done not proceeding, hazardous or unclear task | R: grip L
+789 | S: rel L | R: mv L 30 5 0 fast
+790 | S: mv L -10 -5 5 slow | R: rot L 45
+791 | S: rel L | R: rel L
+792 | S: look | R: mv L 3.1 5.3 -10 fast
+793 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+794 | S: look | R: grip L
+795 | S: mv L 0 0 10 slow | R: rot L 45
+796 | S: rel L | R: rel L
+797 | S: mv L 7.3 7.2 -10 slow | R: mv L 7.3 7.2 -10 fast
+798 | S: look | R: mv L 35 5 0 fast
+799 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast

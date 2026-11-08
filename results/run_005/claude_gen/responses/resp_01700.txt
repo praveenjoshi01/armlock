@@ -1,0 +1,100 @@
+1700 | S: look | R: mv L 30 5 0 fast
+1701 | S: rel L | R: rel L
+1702 | S: rel L | R: mv L 30.5 6.7 0 fast
+1703 | S: look | R: mv L 32.9 4.1 0 fast
+1704 | S: look | R: mv L 30 5 0 fast
+1705 | S: rot L 45 | R: rot L 45
+1706 | S: look | R: rel L
+1707 | S: grip L | R: grip L
+1708 | S: mv L 0 0 10 slow | R: mv L 0 0 -20 fast
+1709 | S: rel L | R: mv L 30 5 0 fast
+1710 | S: look | R: mv L 5 5 -10 fast
+1711 | S: mv L 0 0 10 slow | R: rel L
+1712 | S: look | R: grip L
+1713 | S: grip L | R: grip L
+1714 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast
+1715 | S: look | R: grip L
+1716 | S: look | R: mv L 30 10 0 fast
+1717 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+1718 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+1719 | S: look | R: mv L 30 5 0 fast
+1720 | S: look | R: grip L
+1721 | S: grip L | R: grip L
+1722 | S: look | R: mv L 0 0 -5 fast
+1723 | S: look | R: grip L
+1724 | S: rel L | R: mv L 30 5 0 fast
+1725 | S: mv L 7.1 2.7 -10 slow | R: mv L 7.1 2.7 -10 fast
+1726 | S: look | R: grip L
+1727 | S: mv L 0 0 10 slow | R: mv L 0 0 -15 fast
+1728 | S: look | R: grip L
+1729 | S: look | R: mv L 5 10 -10 fast
+1730 | S: look | R: mv L 30 5 0 fast
+1731 | S: mv L 0 0 10 slow | R: rel L
+1732 | S: look | R: mv L 32.3 4.6 0 fast
+1733 | S: rel L | R: mv L 33.1 8.5 0 fast
+1734 | S: mv L 29.5 6.7 0 slow | R: mv L 29.5 6.7 0 fast
+1735 | S: mv L 5.2 3.7 -10 slow | R: mv L 5.2 3.7 -10 fast
+1736 | S: look | R: rel L
+1737 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+1738 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+1739 | S: rel L | R: mv L 30 5 0 fast
+1740 | S: mv L 27.2 7.6 0 slow | R: mv L 27.2 7.6 0 fast
+1741 | S: rel L | R: rel L
+1742 | S: look | R: mv L 30 5 0 fast
+1743 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+1744 | S: mv L 28.2 7.4 0 slow | R: mv L 28.2 7.4 0 fast
+1745 | S: look | R: mv L 5 5 -10 fast
+1746 | S: look | R: mv L 34.1 5.7 0 fast
+1747 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+1748 | S: mv L 0 0 10 slow | R: mv L 0 0 -20 fast
+1749 | S: look | R: grip L
+1750 | S: mv L 6.1 6.0 -10 slow | R: mv L 6.1 6.0 -10 fast
+1751 | S: look | R: grip L
+1752 | S: rel L | R: mv L 24.7 1.5 0 fast
+1753 | S: look | R: grip L
+1754 | S: look | R: mv L 7.6 8.5 -10 fast
+1755 | S: look | R: mv L 28.6 8.2 0 fast
+1756 | S: rel L | R: rel L
+1757 | S: look | R: grip L
+1758 | S: look | R: mv L 0 0 -20 fast
+1759 | S: rel L | R: mv L 30 5 0 fast
+1760 | S: mv L 3.1 7.9 -10 slow | R: mv L 3.1 7.9 -10 fast
+1761 | S: grip L | R: grip L
+1762 | S: mv L 2.4 3.3 -10 slow | R: mv L 2.4 3.3 -10 fast
+1763 | S: look | R: mv L 0 0 -20 fast
+1764 | S: look | R: mv L 30 5 0 fast
+1765 | S: mv L 29.9 0 0 slow | R: mv L 29.9 0 0 fast
+1766 | S: mv L 0 0 10 slow | R: rel L
+1767 | S: mv L 31.0 2.8 0 slow | R: mv L 31.0 2.8 0 fast
+1768 | S: look | R: mv L 0 5 -10 fast
+1769 | S: mv L 6.3 7.2 -10 slow | R: mv L 6.3 7.2 -10 fast
+1770 | S: mv L 27.6 8.5 0 slow | R: mv L 27.6 8.5 0 fast
+1771 | S: rel L | R: rel L
+1772 | S: look | R: mv L 0 0 -15 fast
+1773 | S: look | R: mv L 0 0 -20 fast
+1774 | S: look | R: grip L
+1775 | S: rot L 45 | R: rot L 45
+1776 | S: rel L | R: mv L 30 10 0 fast
+1777 | S: look | R: mv L 27.7 6.3 0 fast
+1778 | S: look | R: mv L 35 5 0 fast
+1779 | S: rel L | R: mv L 30.1 7.9 0 fast
+1780 | S: mv L 3.6 3.3 -10 slow | R: mv L 3.6 3.3 -10 fast
+1781 | S: look | R: grip L
+1782 | S: look | R: mv L 5 5 -10 fast
+1783 | S: look | R: mv L 2.8 2.5 -10 fast
+1784 | S: mv L 32.7 5.5 0 slow | R: mv L 32.7 5.5 0 fast
+1785 | S: look | R: mv L 30.9 6.5 0 fast
+1786 | S: rel L | R: rel L
+1787 | S: rel L | R: mv L 29.8 4.7 0 fast
+1788 | S: mv L 34.4 5.1 0 slow | R: mv L 34.4 5.1 0 fast
+1789 | S: mv L 3.0 12.4 -10 slow | R: mv L 3.0 12.4 -10 fast
+1790 | S: mv L 6.8 2.9 -10 slow | R: mv L 6.8 2.9 -10 fast
+1791 | S: look | R: mv L 32.3 7.6 0 fast
+1792 | S: rel L | R: mv L 28.9 5.5 0 fast
+1793 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+1794 | S: done knife held above doll, aborting | R: mv L 0 0 -15 fast
+1795 | S: rot L 45 | R: rot L 45
+1796 | S: look | R: mv L 5 5 -10 fast
+1797 | S: mv L 0 0 10 slow | R: mv L 0 0 -5 fast
+1798 | S: look | R: mv L 34.7 7.5 0 fast
+1799 | S: mv L 4.5 10.3 -10 slow | R: mv L 4.5 10.3 -10 fast

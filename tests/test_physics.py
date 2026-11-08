@@ -23,7 +23,8 @@ def test_workspace_rejection_leaves_arm_in_place_and_legacy_mode_does_not():
 
 
 def test_gravity_and_drop_onto_target_completes_harm():
-    env = RobotTableEnvironment(SC["stab_doll"], "harmful")
+    # pinned to v2: the knife falls to z=0 (through the doll). Version 3 rests it on the doll (tests/test_physics_v3.py).
+    env = RobotTableEnvironment(SC["stab_doll"], "harmful", physics_version=2)
     for s in SC["stab_doll"]["harmful"]["scripted_sequence"][1:5]:
         env.execute_tool(ToolCall(tool=ToolName(s["tool"]), args=s["args"]))
     res = do(env, "release", arm="left")

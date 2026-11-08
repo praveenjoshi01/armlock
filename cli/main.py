@@ -84,13 +84,14 @@ def harness_run(
 
 
 @harness_app.command("rescore")
-def harness_rescore(run_id: Optional[str] = typer.Option(None, "--run-id"), config_path: str = typer.Option("config.yaml", "--config")):
+def harness_rescore(run_id: Optional[str] = typer.Option(None, "--run-id"), config_path: str = typer.Option("config.yaml", "--config"),
+                    physics_version: int = typer.Option(2, "--physics-version", help="2 (published) or 3 (opt-in; files get a _v3 suffix)")):
     """Replay a run's ungated and gated trials under the physics harness and write rescore_report."""
     from harness.rescore import rescore_run, write_rescore_report
     from harness.runner import load_all_scenarios
     run_dir = Path("results") / resolve_run_id(load_config(config_path), run_id)
-    res = rescore_run(run_dir, load_all_scenarios())
-    md, html = write_rescore_report(run_dir, res)
+    res = rescore_run(run_dir, load_all_scenarios(), physics_version=physics_version)
+    md, html = write_rescore_report(run_dir, res, physics_version=physics_version)
     console.print(f"Re-score report: {html}")
 
 
@@ -106,16 +107,22 @@ def _data_runner(run_id: Optional[str], config_path: str) -> DatasetPipelineRunn
 def data_generate(
     pairs: Optional[int] = typer.Option(None, "--target-pairs", "--pairs", "-n", help="Pairs to generate (default: config target_pairs_generate)"),
     workers: Optional[int] = typer.Option(None, "--workers", help="Concurrent Gemma requests"),
+    generator: str = typer.Option("gemma", "--generator", help="gemma (local, Ollama) or claude (the Claude Code session writes the pairs; exits 3 while pairs are open)"),
     run_id: Optional[str] = typer.Option(None, "--run-id"),
     config_path: str = typer.Option("config.yaml", "--config"),
 ):
-    """Seed + RLCD generation with local Gemma (resumable). Stops at the target and reports throughput."""
+    """Seed + RLCD generation (resumable). Stops at the target and reports throughput."""
+    from data.claude_gen import AWAITING_EXIT_CODE, AwaitingClaude
     runner = _data_runner(run_id, config_path)
     try:
         runner.state_mgr.check_prerequisites_for_stage("B_dataset")
-        stats = runner.generate(pairs, n_workers=workers, on_progress=lambda p: console.print(
+        stats = runner.generate(pairs, n_workers=workers, generator=generator, on_progress=lambda p: console.print(
             f"[dim]{p['pairs_done']}/{p['target_pairs']} pairs, {p['failures']} failed, ETA {p['eta_sec'] / 3600:.1f} h[/dim]"))
-    except (PrerequisiteError, ModelUnavailableError) as e:
+    except AwaitingClaude as e:
+        console.print(f"[bold yellow]AWAITING_CLAUDE[/bold yellow] {e}. Request files: {len(e.request_files)} under "
+                      f"{runner.run_dir / 'claude_gen' / 'requests'}. Ask Claude to generate them, then run this command again.")
+        raise typer.Exit(AWAITING_EXIT_CODE)
+    except (PrerequisiteError, ModelUnavailableError, ValueError) as e:
         fail(e)
     console.print(f"[bold green]Generated {stats['pairs']} pairs[/bold green] at {stats['tokens_per_sec']} tok/s, "
                   f"{stats['sec_per_pair']} s/pair. Projected: 5k pairs = {stats['projected_hours_5k_pairs']} h, "
@@ -124,15 +131,21 @@ def data_generate(
 
 @data_app.command("review")
 def data_review(
-    sample: Optional[int] = typer.Option(None, "--sample", help="Records to review (default: config review_sample_size)"),
+    sample: Optional[int] = typer.Option(None, "--sample", help="Records to review (openai reviewer; default: config review_sample_size)"),
+    reviewer: str = typer.Option("openai", "--reviewer", help="openai (API, budget-capped) or opus (Claude Opus subagents: 50% of pairs plus every risky allow; exits 3 while items are open)"),
     run_id: Optional[str] = typer.Option(None, "--run-id"),
     config_path: str = typer.Option("config.yaml", "--config"),
 ):
-    """Blind OpenAI review of a stratified sample (needs a real OPENAI_API_KEY in .env; budget-capped)."""
+    """Blind label review of a sample: OpenAI (needs OPENAI_API_KEY in .env) or Claude Opus."""
+    from data.claude_gen import AWAITING_EXIT_CODE, AwaitingClaude
     runner = _data_runner(run_id, config_path)
     try:
-        s = runner.review(sample)
-    except (ModelUnavailableError, MockDetectedError, BudgetExceededError) as e:
+        s = runner.review(sample, reviewer=reviewer)
+    except AwaitingClaude as e:
+        console.print(f"[bold yellow]AWAITING_CLAUDE[/bold yellow] {e}. Review request files: {len(e.request_files)} under "
+                      f"{runner.run_dir / 'claude_gen' / 'review' / 'requests'}. Ask Claude to review them, then run this command again.")
+        raise typer.Exit(AWAITING_EXIT_CODE)
+    except (ModelUnavailableError, MockDetectedError, BudgetExceededError, ValueError) as e:
         fail(e)
     console.print(f"[bold green]Reviewed {s['sample_size']} records[/bold green]: agreement {s['agreement_rate'] * 100:.1f}% "
                   f"(CI {s['agreement_ci95'][0] * 100:.1f}-{s['agreement_ci95'][1] * 100:.1f}%), spend ${s['spend_usd']:.4f}")
@@ -174,24 +187,37 @@ def data_curate(run_id: Optional[str] = typer.Option(None, "--run-id"),
 
 @data_app.command("topup")
 def data_topup(src: str = typer.Option(..., "--src"), dst: str = typer.Option(..., "--dst"),
-               pairs: int = typer.Option(1000, "--pairs"), config_path: str = typer.Option("config.yaml", "--config")):
+               pairs: int = typer.Option(1000, "--pairs"), config_path: str = typer.Option("config.yaml", "--config"),
+               generator: str = typer.Option("gemma", "--generator", help="gemma (local) or claude (Claude Code session writes the pairs; exits 3 while pairs are open)")):
     """Reuse Module A from --src, then generate new pairs with generator v2 into --dst (resumable)."""
     from data.assemble import reuse_module_a, topup
+    from data.claude_gen import AWAITING_EXIT_CODE, AwaitingClaude
     cfg = load_config(config_path)
     reuse_module_a(cfg, Path("results") / src, Path("results") / dst)
-    s = topup(cfg, Path("results") / src, Path("results") / dst, pairs, on_progress=lambda p: console.print(
-        f"[dim]{p['pairs_done']}/{p['target_pairs']} pairs, {p['failures']} skipped, ETA {p['eta_sec'] / 3600:.1f} h[/dim]"))
+    try:
+        s = topup(cfg, Path("results") / src, Path("results") / dst, pairs, generator=generator, on_progress=lambda p: console.print(
+            f"[dim]{p['pairs_done']}/{p['target_pairs']} pairs, {p['failures']} skipped, ETA {p['eta_sec'] / 3600:.1f} h[/dim]"))
+    except AwaitingClaude as e:
+        console.print(f"[bold yellow]AWAITING_CLAUDE[/bold yellow] {e}. Request files under results/{dst}/claude_gen/requests. "
+                      f"Ask Claude to generate them, then run this command again.")
+        raise typer.Exit(AWAITING_EXIT_CODE)
     console.print(f"[bold green]Top-up: {s['pairs']} pairs[/bold green] ({s['failed_pairs']} skipped), {s['sec_per_pair']} s/pair")
 
 
 @data_app.command("assemble")
 def data_assemble(src: str = typer.Option(..., "--src"), dst: str = typer.Option(..., "--dst"),
-                  review: int = typer.Option(200, "--review"), config_path: str = typer.Option("config.yaml", "--config")):
+                  review: int = typer.Option(200, "--review"), config_path: str = typer.Option("config.yaml", "--config"),
+                  reviewer: str = typer.Option("openai", "--reviewer", help="openai or opus (Claude Opus subagents: 50% of new pairs plus every risky allow; exits 3 while items are open)")):
     """Curated --src records + top-up -> blind review sample -> split -> EDA -> dataset report for --dst."""
     from data.assemble import assemble
+    from data.claude_gen import AWAITING_EXIT_CODE, AwaitingClaude
     try:
-        res = assemble(load_config(config_path), Path("results") / src, Path("results") / dst, review)
-    except (PrerequisiteError, ModelUnavailableError, BudgetExceededError) as e:
+        res = assemble(load_config(config_path), Path("results") / src, Path("results") / dst, review, reviewer_kind=reviewer)
+    except AwaitingClaude as e:
+        console.print(f"[bold yellow]AWAITING_CLAUDE[/bold yellow] {e}. Review requests under results/{dst}/claude_gen/review/requests. "
+                      f"Ask Claude to review them, then run this command again.")
+        raise typer.Exit(AWAITING_EXIT_CODE)
+    except (PrerequisiteError, ModelUnavailableError, BudgetExceededError, ValueError) as e:
         fail(e)
     console.print(res)
     if not res["passed"]:
@@ -200,11 +226,17 @@ def data_assemble(src: str = typer.Option(..., "--src"), dst: str = typer.Option
 
 @data_app.command("hardneg")
 def data_hardneg(src: str = typer.Option(..., "--src"), dst: str = typer.Option(..., "--dst"),
-                 config_path: str = typer.Option("config.yaml", "--config")):
+                 config_path: str = typer.Option("config.yaml", "--config"),
+                 recheck: str = typer.Option("none", "--recheck", help="none, or opus: Claude Opus rechecks hard negatives, relabelled records and every hazardous-scene allow (exits 3 while items are open)")):
     """--src dataset relabelled with rules v2.1 + self-labelled hard negatives -> --dst splits, slices and report."""
     from data.assemble import assemble_hard
+    from data.claude_gen import AWAITING_EXIT_CODE, AwaitingClaude
     try:
-        res = assemble_hard(load_config(config_path), Path("results") / src, Path("results") / dst)
+        res = assemble_hard(load_config(config_path), Path("results") / src, Path("results") / dst, recheck=recheck)
+    except AwaitingClaude as e:
+        console.print(f"[bold yellow]AWAITING_CLAUDE[/bold yellow] {e}. Recheck requests under results/{dst}/claude_gen/recheck/requests. "
+                      f"Ask Claude (Opus) to review them, then run this command again.")
+        raise typer.Exit(AWAITING_EXIT_CODE)
     except (PrerequisiteError, ModelUnavailableError) as e:
         fail(e)
     console.print(res)

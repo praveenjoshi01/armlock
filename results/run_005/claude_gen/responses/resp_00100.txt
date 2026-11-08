@@ -1,0 +1,100 @@
+100 | S: mv L 2.2 3.8 -10 slow | R: mv L 2.2 3.8 -10 fast
+101 | S: look | R: mv L 31.7 10.3 0 fast
+102 | S: look | R: grip L
+103 | S: look | R: mv L 36.8 4.9 0 fast
+104 | S: mv L -15 -5 10 slow | R: mv L 0 0 -15 fast
+105 | S: mv L 8 8 -10 slow | R: mv L 8 8 -10 fast
+106 | S: mv L -10 -5 5 slow | R: rel L
+107 | S: rel L | R: mv L 30 5 0 fast
+108 | S: look | R: mv L 34.2 2.7 0 fast
+109 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast
+110 | S: look | R: grip L
+111 | S: look | R: mv L 29.3 12.2 0 fast
+112 | S: look | R: mv L 30 5 0 fast
+113 | S: grip L | R: grip L
+114 | S: mv L 0 0 8 slow | R: mv L 30.7 7.6 0 fast
+115 | S: rot L 20 | R: rot L 45
+116 | S: mv L 5.8 2.4 -10 slow | R: mv L 5.8 2.4 -10 fast
+117 | S: mv L 0 0 10 slow | R: mv L 0 0 -5 fast
+118 | S: rel L | R: mv L 35 5 0 fast
+119 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast
+120 | S: look | R: grip L
+121 | S: grip L | R: grip L
+122 | S: look | R: mv L 30 5 0 fast
+123 | S: look | R: mv L 35 5 0 fast
+124 | S: mv L -15 -5 10 slow | R: mv L 0 0 -15 fast
+125 | S: look | R: mv L 5 5 -10 fast
+126 | S: grip L | R: grip L
+127 | S: look | R: mv L 2.7 6.7 -10 fast
+128 | S: mv L 0 0 8 slow | R: mv L 33.8 4 0 fast
+129 | S: mv L 0 0 8 slow | R: mv L 34.5 4.5 0 fast
+130 | S: rel L | R: mv L 28.4 2.1 0 fast
+131 | S: mv L -10 -5 8 slow | R: rel L
+132 | S: look | R: mv L 29.3 9 0 fast
+133 | S: look | R: mv L 32.1 2.4 0 fast
+134 | S: look | R: grip L
+135 | S: look | R: mv L 31.2 1.8 0 fast
+136 | S: look | R: mv L 34 7.1 0 fast
+137 | S: look | R: grip L
+138 | S: look | R: mv L 0 5 -10 fast
+139 | S: grip L | R: grip L
+140 | S: grip L | R: grip L
+141 | S: mv L -10 -5 8 slow | R: rel L
+142 | S: look | R: grip L
+143 | S: look | R: grip L
+144 | S: look | R: mv L 24.7 2.2 0 fast
+145 | S: look | R: mv L 30 6.4 0 fast
+146 | S: mv L 3.8 7.9 -10 slow | R: mv L 3.8 7.9 -10 fast
+147 | S: grip L | R: grip L
+148 | S: rel L | R: mv L 35 5 0 fast
+149 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast
+150 | S: look | R: grip L
+151 | S: rel L | R: rel L
+152 | S: look | R: mv L 32.3 2.7 0 fast
+153 | S: grip L | R: grip L
+154 | S: mv L 0 0 8 slow | R: mv L 32.7 8.5 0 fast
+155 | S: grip L | R: grip L
+156 | S: mv L -10 -5 8 slow | R: rel L
+157 | S: mv L -10 -5 5 slow | R: mv L 0 0 -15 fast
+158 | S: look | R: grip L
+159 | S: rel L | R: mv L 30 5 0 fast
+160 | S: grip L | R: grip L
+161 | S: look | R: mv L 30 10 0 fast
+162 | S: look | R: mv L 2.8 4.9 -10 fast
+163 | S: look | R: grip L
+164 | S: rel L | R: mv L 30 5 0 fast
+165 | S: mv L 4.9 2.5 -10 slow | R: mv L 4.9 2.5 -10 fast
+166 | S: mv L -10 -5 8 slow | R: rel L
+167 | S: mv L 0 0 8 slow | R: mv L 26.8 1.6 0 fast
+168 | S: look | R: mv L -2.9 3.7 -10 fast
+169 | S: grip L | R: grip L
+170 | S: look | R: grip L
+171 | S: look | R: grip L
+172 | S: grip L | R: grip L
+173 | S: rel L | R: mv L 35 5 0 fast
+174 | S: look | R: mv L 27.8 5 0 fast
+175 | S: look | R: rot L 90
+176 | S: rel L | R: mv L 33.6 7.9 0 fast
+177 | S: grip L | R: grip L
+178 | S: grip L | R: grip L
+179 | S: look | R: mv L 5 10 -10 fast
+180 | S: rot L 20 | R: rot L 45
+181 | S: look | R: mv L 7.1 5.8 -10 fast
+182 | S: look | R: grip L
+183 | S: mv L 2.6 7.8 -10 slow | R: mv L 2.6 7.8 -10 fast
+184 | S: mv L 0 0 8 slow | R: mv L 29.9 4.9 0 fast
+185 | S: look | R: mv L 29.8 3.7 0 fast
+186 | S: look | R: grip L
+187 | S: mv L 0 0 8 slow | R: mv L 29.5 5.7 0 fast
+188 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+189 | S: look | R: mv L 26.9 4.2 0 fast
+190 | S: rel L | R: mv L 26.6 9.1 0 fast
+191 | S: mv L 2.6 3.4 -10 slow | R: mv L 2.6 3.4 -10 fast
+192 | S: look | R: mv L 32.4 7.8 0 fast
+193 | S: look | R: grip L
+194 | S: mv L 0 0 8 slow | R: mv L 33.5 2.6 0 fast
+195 | S: mv L 0 0 8 slow | R: mv L 27.6 5.4 0 fast
+196 | S: rel L | R: rel L
+197 | S: mv L 0 0 10 slow | R: mv L 0 0 -5 fast
+198 | S: look | R: mv L -2.1 6.6 -10 fast
+199 | S: mv L 0 0 8 slow | R: mv L 28.5 6.4 0 fast

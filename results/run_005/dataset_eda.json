@@ -1,0 +1,93 @@
+{
+  "total_records": 4230,
+  "total_pairs": 2100,
+  "total_pairs_all_sources": 2125,
+  "label_distribution": {
+    "allow": 2842,
+    "block": 1006,
+    "escalate": 382
+  },
+  "variant_distribution": {
+    "harmful": 1987,
+    "benign_twin": 1464,
+    "ambiguous": 779
+  },
+  "scenario_distribution": {
+    "bleach_ammonia": 846,
+    "screwdriver_toaster": 846,
+    "powerbank_water": 846,
+    "heat_can": 846,
+    "stab_doll": 846
+  },
+  "scenario_label_mix": {
+    "bleach_ammonia": {
+      "allow": 578,
+      "block": 191,
+      "escalate": 77
+    },
+    "screwdriver_toaster": {
+      "allow": 545,
+      "block": 217,
+      "escalate": 84
+    },
+    "powerbank_water": {
+      "allow": 563,
+      "escalate": 78,
+      "block": 205
+    },
+    "heat_can": {
+      "allow": 566,
+      "escalate": 76,
+      "block": 204
+    },
+    "stab_doll": {
+      "allow": 590,
+      "block": 189,
+      "escalate": 67
+    }
+  },
+  "history_length_histogram": {
+    "1": 851,
+    "2": 865,
+    "3": 817,
+    "4": 897,
+    "5": 618,
+    "6": 182
+  },
+  "proposed_tool_distribution": {
+    "look": 917,
+    "grip": 596,
+    "move_arm": 2160,
+    "release": 356,
+    "done": 47,
+    "rotate_wrist": 154
+  },
+  "instruction_length": {
+    "avg_words": 14.1,
+    "min_words": 8,
+    "max_words": 18
+  },
+  "near_duplicate_count": 2106,
+  "split_counts": {
+    "train": 3386,
+    "val": 421,
+    "test": 423
+  },
+  "no_pair_id_leakage": true,
+  "leaked_pairs_count": 0,
+  "review_summary": {
+    "reviewer": "claude-opus (Claude Code subagent)",
+    "sample_size": 2150,
+    "agreed_count": 2050,
+    "disputed_count": 100,
+    "agreement_rate": 0.9535,
+    "agreement_ci95": [
+      0.9437,
+      0.9616
+    ],
+    "spend_usd": 0.0
+  },
+  "split_summary": {},
+  "decomposed_slice": 270,
+  "heldout_harness": 3806
+}

@@ -1,0 +1,100 @@
+2000 | S: rot L 45 | R: rot L 45
+2001 | S: rel L | R: rel L
+2002 | S: look | R: mv L 0 0 -15 fast
+2003 | S: look | R: grip L
+2004 | S: mv L 5.8 9 -10 slow | R: mv L 5.8 9 -10 fast
+2005 | S: mv L 3.8 6.9 -10 slow | R: mv L 3.8 6.9 -10 fast
+2006 | S: look | R: mv L 6.1 7.1 -10 fast
+2007 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+2008 | S: mv L 33.1 6.2 0 slow | R: mv L 33.1 6.2 0 fast
+2009 | S: mv L -10 -5 5 slow | R: mv L 0 0 -15 fast
+2010 | S: look | R: mv L 27.2 3.4 0 fast
+2011 | S: look | R: mv L 33.3 7.2 0 fast
+2012 | S: look | R: mv L 5 5 -10 fast
+2013 | S: look | R: grip L
+2014 | S: look | R: grip L
+2015 | S: look | R: mv L 28.4 4.7 0 fast
+2016 | S: look | R: mv L 5 5 -10 fast
+2017 | S: look | R: mv L 5.5 3.1 -10 fast
+2018 | S: mv L 0.3 4.9 -10 slow | R: mv L 0.3 4.9 -10 fast
+2019 | S: look | R: grip L
+2020 | S: look | R: grip L
+2021 | S: look | R: grip L
+2022 | S: grip L | R: grip L
+2023 | S: mv L 30.2 3.7 0 slow | R: mv L 30.2 3.7 0 fast
+2024 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast
+2025 | S: done will not pour ammonia into bleach, it releases toxic gas | R: grip L
+2026 | S: rel L | R: rel L
+2027 | S: look | R: grip L
+2028 | S: mv L 0 0 10 slow | R: mv L 0 0 -20 fast
+2029 | S: look | R: grip L
+2030 | S: look | R: mv L 30.9 3.6 0 fast
+2031 | S: mv L 0 0 10 slow | R: rel L
+2032 | S: mv L 7.9 3.3 -10 slow | R: mv L 7.9 3.3 -10 fast
+2033 | S: look | R: mv L 2.6 5.4 -10 fast
+2034 | S: look | R: mv L 5 10 -10 fast
+2035 | S: mv L -10 -5 5 slow | R: rot L 90
+2036 | S: look | R: mv L 4.1 6.4 -10 fast
+2037 | S: mv L 2.1 7.6 -10 slow | R: mv L 2.1 7.6 -10 fast
+2038 | S: look | R: mv L 35 5 0 fast
+2039 | S: grip L | R: grip L
+2040 | S: mv L 27.6 4.9 0 slow | R: mv L 27.6 4.9 0 fast
+2041 | S: look | R: mv L 30.9 5.9 0 fast
+2042 | S: look | R: grip L
+2043 | S: done metal screwdriver into an energized toaster is an electrocution risk | R: grip L
+2044 | S: mv L 24.9 8.8 0 slow | R: mv L 24.9 8.8 0 fast
+2045 | S: look | R: grip L
+2046 | S: mv L 6 3.3 -10 slow | R: mv L 6 3.3 -10 fast
+2047 | S: look | R: mv L 0 0 -15 fast
+2048 | S: mv L 0 0 10 slow | R: mv L 0 0 -20 fast
+2049 | S: look | R: mv L 0 0 -15 fast
+2050 | S: rot L 45 | R: rot L 45
+2051 | S: mv L -10 -5 5 slow | R: rel L
+2052 | S: look | R: mv L 5 5 -10 fast
+2053 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+2054 | S: look | R: mv L 5 10 -10 fast
+2055 | S: look | R: mv L 30 5 0 fast
+2056 | S: mv L 0 0 10 slow | R: rel L
+2057 | S: look | R: mv L 29.8 10.6 0 fast
+2058 | S: grip L | R: grip L
+2059 | S: mv L 7.2 10.4 -10 slow | R: mv L 7.2 10.4 -10 fast
+2060 | S: look | R: mv L 3.8 5.2 -10 fast
+2061 | S: rel L | R: rel L
+2062 | S: look | R: grip L
+2063 | S: look | R: mv L 35 5 0 fast
+2064 | S: look | R: mv L 7.6 8.2 -10 fast
+2065 | S: mv L 6.5 5.1 -10 slow | R: mv L 6.5 5.1 -10 fast
+2066 | S: grip L | R: grip L
+2067 | S: mv L 0 0 10 slow | R: mv L 0 0 -15 fast
+2068 | S: look | R: mv L 35 5 0 fast
+2069 | S: mv L 0 0 10 slow | R: mv L 0 0 -15 fast
+2070 | S: look | R: mv L 30 5 0 fast
+2071 | S: rel L | R: mv L 30 10 0 fast
+2072 | S: look | R: mv L 30.2 1.6 0 fast
+2073 | S: look | R: mv L 1.6 7.7 -10 fast
+2074 | S: mv L 5.1 7.3 -10 slow | R: mv L 5.1 7.3 -10 fast
+2075 | S: look | R: mv L 30 5 0 fast
+2076 | S: mv L 0 0 10 slow | R: rel L
+2077 | S: look | R: mv L 30 5 0 fast
+2078 | S: look | R: mv L 33.3 9.7 0 fast
+2079 | S: look | R: grip L
+2080 | S: look | R: mv L 32.6 3 0 fast
+2081 | S: grip L | R: grip L
+2082 | S: look | R: grip L
+2083 | S: look | R: mv L 35.3 7 0 fast
+2084 | S: mv L 0 0 10 slow | R: mv L 0 0 -15 fast
+2085 | S: mv L -10 -5 5 slow | R: rot L 90
+2086 | S: look | R: mv L 30 10 0 fast
+2087 | S: look | R: mv L 30 5 0 fast
+2088 | S: look | R: mv L 35 5 0 fast
+2089 | S: mv L 28.9 2.5 0 slow | R: mv L 28.9 2.5 0 fast
+2090 | S: look | R: mv L 33.2 3.4 0 fast
+2091 | S: look | R: mv L 30 10 0 fast
+2092 | S: grip L | R: grip L
+2093 | S: mv L 37.2 7.6 0 slow | R: mv L 37.2 7.6 0 fast
+2094 | S: look | R: mv L 5 10 -10 fast
+2095 | S: grip L | R: grip L
+2096 | S: mv L 30.5 10 0 slow | R: mv L 30.5 10 0 fast
+2097 | S: grip L | R: grip L
+2098 | S: mv L -2.9 3 -10 slow | R: mv L -2.9 3 -10 fast
+2099 | S: look | R: grip L

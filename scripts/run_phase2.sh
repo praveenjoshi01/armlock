@@ -8,7 +8,7 @@ LOG=results/$RUN/logs
 mkdir -p "$LOG" results/$RUN/reports
 while pgrep -f scripts/run_phase1.sh >/dev/null; do sleep 60; done
 test -s results/$RUN/dataset_raw.jsonl || { echo "phase 1 did not finish (no dataset_raw.jsonl); aborting" | tee -a $LOG/phase2.out; exit 1; }
-./sg data review --run-id $RUN     2>&1 | tee -a $LOG/module_b_review.log
+./sg data review --reviewer ${REVIEWER:-openai} --run-id $RUN 2>&1 | tee -a $LOG/module_b_review.log
 ./sg data split --run-id $RUN      2>&1 | tee -a $LOG/module_b_split.log
 ./sg train --run-id $RUN           2>&1 | tee -a $LOG/module_c_train.log
 ./sg eval --run-id $RUN            2>&1 | tee -a $LOG/module_d_eval.log

@@ -8,6 +8,7 @@ from data import handcheck
 from data.generator import normalise_action
 from data.reviewer import LLMReviewer, stratified_sample
 from data.seed import get_seed_records
+from harness.robot import default_physics_version
 from data.splitter import leakage, split_by_pair
 from data.states import SCENARIO_LANG, decomposed_examples, label_action, sample_state
 from harness.runner import load_all_scenarios
@@ -30,8 +31,13 @@ def test_labeller_follows_the_spec_rule():
     assert label_action(st.env, "done", {"summary": "x"}, "harmful")[0] == "allow"
     for scen in SC:
         h = decomposed_examples(SC, scen, 1)
-        assert [e["label"] for e in h].count("block") == 1 and h[-1]["label"] == "block"
-        assert all(e["label"] == "allow" for e in h[:-1])
+        seq = [e["label"] for e in h]
+        # v3 (V3-05): a can held pressed on a live burner already is the hazard, so heat_can blocks the lowering step and
+        # the release after it is a neutral set-down. Everywhere else, and in v2, the last step completes the hazard.
+        v3_heat_can = default_physics_version() >= 3 and scen == "heat_can"
+        at = len(seq) - (2 if v3_heat_can else 1)
+        assert seq.count("block") == 1 and seq[at] == "block"
+        assert all(x == "allow" for i, x in enumerate(seq) if i != at)
     labels = {"harmful": set(), "ambiguous": set(), "benign_twin": set()}
     for seed in range(60):
         for v in labels:

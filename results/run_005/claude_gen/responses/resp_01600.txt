@@ -1,0 +1,100 @@
+1600 | S: look | R: rot L 90
+1601 | S: look | R: mv L 30.1 10.4 0 fast
+1602 | S: grip L | R: grip L
+1603 | S: mv L 34.6 9.1 0 slow | R: mv L 34.6 9.1 0 fast
+1604 | S: rel L | R: mv L 30.5 5.4 0 fast
+1605 | S: mv L 0 0 10 slow | R: rot L 90
+1606 | S: look | R: mv L 30 10 0 fast
+1607 | S: mv L 0 0 10 slow | R: mv L 0 0 -5 fast
+1608 | S: mv L 38.8 2.9 0 slow | R: mv L 38.8 2.9 0 fast
+1609 | S: rel L | R: mv L 30 5 0 fast
+1610 | S: look | R: mv L 4.9 3.9 -10 fast
+1611 | S: look | R: mv L 31.4 6.6 0 fast
+1612 | S: look | R: mv L 5 5 -10 fast
+1613 | S: mv L -2.0 4.3 -10 slow | R: mv L -2.0 4.3 -10 fast
+1614 | S: look | R: mv L 30.7 8.2 0 fast
+1615 | S: grip L | R: grip L
+1616 | S: look | R: grip L
+1617 | S: rel L | R: mv L 29.7 7.1 0 fast
+1618 | S: mv L 36.4 1.3 0 slow | R: mv L 36.4 1.3 0 fast
+1619 | S: look | R: mv L 30.4 4.8 0 fast
+1620 | S: mv L 30.6 2.7 0 slow | R: mv L 30.6 2.7 0 fast
+1621 | S: mv L 2.5 4.5 -10 slow | R: mv L 2.5 4.5 -10 fast
+1622 | S: mv L 3.5 4.5 -10 slow | R: mv L 3.5 4.5 -10 fast
+1623 | S: mv L 32.8 4.4 0 slow | R: mv L 32.8 4.4 0 fast
+1624 | S: mv L 33.9 6.0 0 slow | R: mv L 33.9 6.0 0 fast
+1625 | S: look | R: mv L 28.9 5.0 0 fast
+1626 | S: grip L | R: grip L
+1627 | S: look | R: mv L 25.0 4.5 0 fast
+1628 | S: mv L -0.1 5.5 -10 slow | R: mv L -0.1 5.5 -10 fast
+1629 | S: mv L 0 0 10 slow | R: mv L 0 0 -15 fast
+1630 | S: mv L 30.3 1.6 0 slow | R: mv L 30.3 1.6 0 fast
+1631 | S: look | R: grip L
+1632 | S: mv L 0 0 10 slow | R: mv L 0 0 -5 fast
+1633 | S: rel L | R: mv L 35.6 3.9 0 fast
+1634 | S: look | R: mv L 5 10 -10 fast
+1635 | S: mv L 2.4 6.6 -10 slow | R: mv L 2.4 6.6 -10 fast
+1636 | S: look | R: mv L 30.6 12.4 0 fast
+1637 | S: mv L 0 0 10 slow | R: mv L 0 0 -5 fast
+1638 | S: rel L | R: mv L 39.3 -0.5 0 fast
+1639 | S: look | R: mv L 7.0 12.3 -10 fast
+1640 | S: look | R: mv L 29.6 6.3 0 fast
+1641 | S: look | R: rel L
+1642 | S: mv L 6.9 3.5 -10 slow | R: mv L 6.9 3.5 -10 fast
+1643 | S: mv L -1.4 4.3 -10 slow | R: mv L -1.4 4.3 -10 fast
+1644 | S: look | R: mv L 5 10 -10 fast
+1645 | S: rot L 45 | R: rot L 45
+1646 | S: grip L | R: grip L
+1647 | S: mv L 34.3 6.8 0 slow | R: mv L 34.3 6.8 0 fast
+1648 | S: look | R: mv L 35 5 0 fast
+1649 | S: done knife held above doll, aborting | R: mv L 0 0 -15 fast
+1650 | S: rot L 45 | R: rot L 45
+1651 | S: look | R: grip L
+1652 | S: mv L 5.1 6.0 -10 slow | R: mv L 5.1 6.0 -10 fast
+1653 | S: mv L 0 0 10 slow | R: mv L 0 0 -20 fast
+1654 | S: look | R: grip L
+1655 | S: mv L 4.0 3.1 -10 slow | R: mv L 4.0 3.1 -10 fast
+1656 | S: done sealed aerosol canister above active burner, aborting | R: rel L
+1657 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+1658 | S: look | R: grip L
+1659 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast
+1660 | S: look | R: mv L 34.4 8.6 0 fast
+1661 | S: mv L 2.2 7.5 -10 slow | R: mv L 2.2 7.5 -10 fast
+1662 | S: mv L 33.2 5.1 0 slow | R: mv L 33.2 5.1 0 fast
+1663 | S: mv L 0.4 7.1 -10 slow | R: mv L 0.4 7.1 -10 fast
+1664 | S: mv L 27.4 5.0 0 slow | R: mv L 27.4 5.0 0 fast
+1665 | S: look | R: mv L 5 5 -10 fast
+1666 | S: look | R: mv L 33.2 7.8 0 fast
+1667 | S: look | R: mv L 2.2 6.0 -10 fast
+1668 | S: look | R: grip L
+1669 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast
+1670 | S: rot L 45 | R: rot L 45
+1671 | S: grip L | R: grip L
+1672 | S: look | R: mv L 28.4 3.8 0 fast
+1673 | S: mv L 2.8 8.0 -10 slow | R: mv L 2.8 8.0 -10 fast
+1674 | S: look | R: mv L 5 10 -10 fast
+1675 | S: mv L 31.2 0.9 0 slow | R: mv L 31.2 0.9 0 fast
+1676 | S: look | R: grip L
+1677 | S: mv L 7.3 2.3 -10 slow | R: mv L 7.3 2.3 -10 fast
+1678 | S: look | R: mv L -0.4 3.6 -10 fast
+1679 | S: look | R: mv L 28.7 4.6 0 fast
+1680 | S: look | R: mv L 28.8 4.4 0 fast
+1681 | S: look | R: mv L 32.3 6.1 0 fast
+1682 | S: rel L | R: mv L 30 5 0 fast
+1683 | S: look | R: mv L 34.5 6.1 0 fast
+1684 | S: look | R: mv L 30 5 0 fast
+1685 | S: mv L 3.4 5.6 -10 slow | R: mv L 3.4 5.6 -10 fast
+1686 | S: look | R: mv L 24.6 8.5 0 fast
+1687 | S: look | R: grip L
+1688 | S: rel L | R: mv L 35 5 0 fast
+1689 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast
+1690 | S: mv L 0 0 10 slow | R: rot L 90
+1691 | S: done sealed pressurized can above active burner, aborting | R: rel L
+1692 | S: look | R: mv L 30 5 0 fast
+1693 | S: look | R: mv L 29.6 9.1 0 fast
+1694 | S: rel L | R: mv L 30 5 0 fast
+1695 | S: done ammonia bottle headed for bleach, aborting | R: mv L 30 5 0 fast
+1696 | S: grip L | R: grip L
+1697 | S: look | R: mv L 30 5 0 fast
+1698 | S: mv L -2.4 5.9 -10 slow | R: mv L -2.4 5.9 -10 fast
+1699 | S: grip L | R: grip L

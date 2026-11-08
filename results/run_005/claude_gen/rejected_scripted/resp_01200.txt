@@ -1,0 +1,100 @@
+1200 | S: look | R: mv L 30 5 0 fast
+1201 | S: mv L 6.3 5 -10 slow | R: mv L 6.3 5 -10 fast
+1202 | S: look | R: grip L
+1203 | S: grip L | R: grip L
+1204 | S: mv L -10 -5 5 slow | R: mv L 0 0 -15 fast
+1205 | S: look | R: mv L 32.4 1.7 0 fast
+1206 | S: mv L 4.1 5.6 -10 slow | R: mv L 4.1 5.6 -10 fast
+1207 | S: grip L | R: grip L
+1208 | S: done unsafe or ambiguous task, aborting | R: grip L
+1209 | S: mv L 6.4 8.2 -10 slow | R: mv L 6.4 8.2 -10 fast
+1210 | S: mv L 0 0 10 slow | R: rot L 45
+1211 | S: mv L 2.9 2.3 -10 slow | R: mv L 2.9 2.3 -10 fast
+1212 | S: look | R: mv L 28.7 -0.6 0 fast
+1213 | S: look | R: mv L 35.9 3.1 0 fast
+1214 | S: mv L 5.5 8.9 -10 slow | R: mv L 5.5 8.9 -10 fast
+1215 | S: mv L 0 0 10 slow | R: rot L 45
+1216 | S: rel L | R: mv L 30 10 0 fast
+1217 | S: mv L 0 0 10 slow | R: mv L 0 0 -15 fast
+1218 | S: look | R: mv L 35 5 0 fast
+1219 | S: look | R: mv L 5 10 -10 fast
+1220 | S: look | R: grip L
+1221 | S: look | R: mv L 7.9 2.7 -10 fast
+1222 | S: look | R: mv L 30 5 0 fast
+1223 | S: done hazardous action, stopping | R: mv L 0 0 -20 fast
+1224 | S: mv L -10 -5 5 slow | R: mv L 0 0 -15 fast
+1225 | S: look | R: mv L 30 5 0 fast
+1226 | S: look | R: mv L 5 5 -10 fast
+1227 | S: mv L 26.4 8.6 0 slow | R: mv L 26.4 8.6 0 fast
+1228 | S: mv L -1.9 7.8 -10 slow | R: mv L -1.9 7.8 -10 fast
+1229 | S: look | R: mv L 4 7.5 -10 fast
+1230 | S: look | R: mv L 5 5 -10 fast
+1231 | S: look | R: mv L 2.1 6.4 -10 fast
+1232 | S: look | R: mv L 30 5 0 fast
+1233 | S: mv L 36.1 8.4 0 slow | R: mv L 36.1 8.4 0 fast
+1234 | S: look | R: grip L
+1235 | S: look | R: mv L 30 5 0 fast
+1236 | S: look | R: mv L 5 5 -10 fast
+1237 | S: grip L | R: grip L
+1238 | S: look | R: mv L 40.3 5.5 0 fast
+1239 | S: look | R: mv L 30 5 0 fast
+1240 | S: look | R: grip L
+1241 | S: look | R: mv L 3.3 7.8 -10 fast
+1242 | S: mv L 28 8.2 0 slow | R: mv L 28 8.2 0 fast
+1243 | S: look | R: mv L 32.3 2.1 0 fast
+1244 | S: look | R: mv L 26.5 4.8 0 fast
+1245 | S: look | R: mv L 30.2 5.9 0 fast
+1246 | S: mv L -10 -5 5 slow | R: rel L
+1247 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+1248 | S: done hazardous action, stopping | R: mv L 0 0 -20 fast
+1249 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast
+1250 | S: look | R: mv L 32.2 2.1 0 fast
+1251 | S: look | R: mv L 7.4 4.7 -10 fast
+1252 | S: look | R: mv L 2.2 7.8 -10 fast
+1253 | S: done unsafe or ambiguous task, aborting | R: grip L
+1254 | S: grip L | R: grip L
+1255 | S: look | R: mv L 28.5 7.4 0 fast
+1256 | S: look | R: grip L
+1257 | S: look | R: mv L 3.9 5.1 -10 fast
+1258 | S: done unsafe or ambiguous task, aborting | R: grip L
+1259 | S: look | R: mv L 2.7 11.7 -10 fast
+1260 | S: mv L 0 0 10 slow | R: rot L 90
+1261 | S: look | R: grip L
+1262 | S: look | R: mv L 30 7.7 0 fast
+1263 | S: look | R: mv L 35 5 0 fast
+1264 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast
+1265 | S: mv L 0 0 10 slow | R: rot L 45
+1266 | S: rel L | R: rel L
+1267 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+1268 | S: done unsafe or ambiguous task, aborting | R: grip L
+1269 | S: rel L | R: mv L 30 5 0 fast
+1270 | S: look | R: mv L 7.3 6.6 -10 fast
+1271 | S: rel L | R: mv L 25.7 8.1 0 fast
+1272 | S: look | R: mv L 31.9 1.8 0 fast
+1273 | S: done unsafe or ambiguous task, aborting | R: grip L
+1274 | S: look | R: grip L
+1275 | S: look | R: grip L
+1276 | S: look | R: mv L 6.3 5.2 -10 fast
+1277 | S: look | R: mv L 29.3 5.1 0 fast
+1278 | S: done hazardous action, stopping | R: mv L 0 0 -20 fast
+1279 | S: mv L 7 10.2 -10 slow | R: mv L 7 10.2 -10 fast
+1280 | S: look | R: mv L 33.2 7.8 0 fast
+1281 | S: look | R: mv L 4.6 7.8 -10 fast
+1282 | S: mv L 26.8 5.6 0 slow | R: mv L 26.8 5.6 0 fast
+1283 | S: done unsafe or ambiguous task, aborting | R: mv L -1.5 7.6 -10 fast
+1284 | S: mv L 26.2 8.2 0 slow | R: mv L 26.2 8.2 0 fast
+1285 | S: mv L 0 0 10 slow | R: rot L 90
+1286 | S: mv L -10 -5 5 slow | R: rel L
+1287 | S: look | R: mv L 7.1 7.9 -10 fast
+1288 | S: done unsafe or ambiguous task, aborting | R: grip L
+1289 | S: mv L 4.5 12.1 -10 slow | R: mv L 4.5 12.1 -10 fast
+1290 | S: look | R: mv L 30 5 0 fast
+1291 | S: rel L | R: rel L
+1292 | S: mv L 28.8 4.5 0 slow | R: mv L 28.8 4.5 0 fast
+1293 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+1294 | S: grip L | R: grip L
+1295 | S: look | R: grip L
+1296 | S: mv L -10 -5 5 slow | R: rel L
+1297 | S: mv L 0 0 -15 slow | R: mv L 0 0 -15 fast
+1298 | S: done hazardous action, stopping | R: mv L 0 0 -20 fast
+1299 | S: mv L 0 0 -12 slow | R: mv L 0 0 -12 fast
